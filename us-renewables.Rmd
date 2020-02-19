@@ -1,0 +1,176 @@
+---
+title: "lab 5 Time Series with Map"
+author: "Shuhan Song"
+date: "2/6/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+
+### Attach packages
+
+```{r}
+library(tidyverse)
+library(janitor)
+library(lubridate)
+library(here)
+library(paletteer)
+library(tsibble)
+library(fable)
+library(fabletools)
+library(feasts)
+library(forecast)
+library(sf)
+library(tmap)
+library(mapview)
+```
+
+### Monthly US energy consumption data
+
+```{r}
+us_renew <- read_csv(here("data", "renewables_cons_prod.csv")) %>% 
+  clean_names()
+```
+
+- Make description all lower case
+- only keep observations where "description" variable contains "consumption"
+- remove any observations where "description" variable contains "total"
+
+```{r}
+renew_clean <- us_renew %>% 
+  mutate(description = str_to_lower(description)) %>% 
+  filter(str_detect(description, pattern = "consumption")) %>% 
+  filter(!str_detect(description, pattern = "total"))
+```
+
+
+### Convert `yyyymm` column to a date
+
+```{r}
+renew_date <- renew_clean %>% 
+  mutate(yr_mo_day = lubridate::parse_date_time(yyyymm, "ym")) %>% 
+  mutate(month_sep = yearmonth(yr_mo_day)) %>% 
+  mutate(value = as.numeric(value)) %>% 
+  drop_na(month_sep, value)
+
+# Make a version where month and reat are in separate columns
+renew_parsed <- renew_date %>% 
+  mutate(month = month(yr_mo_day, label = TRUE)) %>% # store month in abbreviation, FALSE : month number
+  mutate(year = year(yr_mo_day))
+
+```
+
+
+### Look at the data
+
+```{r}
+renew_gg <- ggplot(data = renew_date, 
+                   aes(x = month_sep, 
+                       y = value, 
+                       group = description)) +
+  geom_line(aes(color = description)) +
+  labs(x = "Time",
+       y = "Consumption (Trillion Btu)",
+       color = "Energy type") +
+  theme_bw()
+```
+
+```{r}
+# update color with paletteer
+renew_gg +
+  scale_color_paletteer_d("palettetown::electrike")
+```
+
+### Coerce renew_parsed to a tsibble
+
+```{r}
+renew_ts <- as_tsibble(renew_parsed, key = description, index = month_sep)
+```
+
+Let's look at out ts data in a couple different ways
+
+```{r}
+renew_ts %>% autoplot(value) # know to group by the key, x uses index
+renew_ts %>% gg_subseries(value)
+renew_ts %>% gg_season(value)
+```
+
+```{r}
+# make season plot use ggplot
+
+ggplot(data = renew_parsed, aes(x = month, y = value, group = year)) +
+  geom_line(aes(color = year)) +
+  facet_wrap(~ description,
+             ncol = 1,
+             scales = "free",
+             strip.position = "right")
+```
+
+### Just look at the hydroelectric energy consumption
+
+```{r}
+hydro_ts <- renew_ts %>% 
+  filter(description == "hydroelectric power consumption")
+
+hydro_ts %>% autoplot(value)
+hydro_ts %>% gg_subseries(value)
+hydro_ts %>% gg_season(value)
+```
+
+# quaterly average consumption for hydro?
+
+```{r}
+hydro_quater <- hydro_ts %>% 
+  index_by(year_qu = ~(yearquarter(.))) %>%  # based on the existing group exists
+  summarize(avg_consumtion = mean(value),
+            description = description)
+```
+
+```{r}
+dcmp <- hydro_ts %>% 
+  model(STL(value ~ season(window = 5)))
+
+components(dcmp) %>% autoplot()
+```
+
+##### residuals 
+
+```{r}
+hist(components(dcmp)$remainder)
+```
+
+##### ACF
+
+```{r}
+hydro_ts %>% 
+  ACF(value) %>% 
+  autoplot()
+# each lag is one month
+```
+
+## DANGER DANGER
+
+```{r}
+hydro_model <- hydro_ts %>% 
+  model(
+    ARIMA(value),
+    ETS(value)
+  ) %>% 
+  fabletools::forecast(h = "4 years") # forecast for the next four years
+
+
+hydro_model %>% autoplot(filter(hydro_ts, year(month_sep) > 2010))
+```
+
+### Make a world map!
+
+```{r}
+world <- read_sf(dsn = here("data", "TM_WORLD_BORDERS_SIMPL-0.3-1"),
+                 layer = "TM_WORLD_BORDERS_SIMPL-0.3")
+
+mapview(world)
+```
+
