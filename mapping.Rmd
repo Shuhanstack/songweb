@@ -1,0 +1,247 @@
+---
+title: "Mapping the world!"
+author: "Shuhan Song"
+date: "2/18/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+```{r}
+# attach packages
+library(sf)
+library(tmap)
+library(mapview)
+library(tidyverse)
+library(here)
+library(janitor)
+library(paletteer)
+```
+
+# sf & tmap
+
+```{r}
+cougars <- sf::read_sf(dsn = here("data", "cougar_connections"), layer = "ds1014") %>% 
+  clean_names()
+```
+
+```{r}
+large_corridors <- cougars %>% 
+  filter(area_ac > 2000) %>% 
+  select(area_ac) # geometry will stick with the data
+
+cougar_sub <- cougars %>% 
+  select(elev_mean)
+```
+
+```{r}
+ggplot(data = cougar_sub) +
+  geom_sf(aes(fill = elev_mean), color = NA) +
+  theme_minimal()
+```
+
+```{r}
+# set to stationary (non-interactive) mode
+tmap_mode("plot")  
+
+tm_shape(cougar_sub) +
+  tm_fill("elev_mean")
+```
+
+```{r}
+tmap_mode("view") # set to interactive viewing mode
+
+tm_shape(cougar_sub) +
+  tm_fill("elev_mean") +
+  tm_basemap("Stamen.Terrain")
+```
+
+ http://leaflet-extras.github.io/leaflet-providers/preview for a preview of basemaps I can add with `tm_basemap`!
+
+
+### Some CA maps
+
+```{r}
+### Read in CA eco-regions data
+ca_eco <- read_sf(dsn = here("data", "ca_eco_region"), layer = "ca_eco") %>% 
+  select(US_L3NAME) %>% 
+  rename(region = US_L3NAME) %>% 
+  st_simplify(dTolerance = 100) %>% # simplify the number of nodes of a polygon
+  st_transform(crs = 4326)
+
+# rmapshaper::ms_simplify(), geos_gSimplify()
+
+plot(ca_eco)
+
+```
+
+
+```{r}
+### Read in CA Counties polygons
+ca_counties <- read_sf(dsn = here("data", "ca_eco_region"), layer = "california_county_shape_file")
+
+st_crs(ca_counties) = 4326
+```
+
+
+
+```{r}
+### Read in CA dam
+ca_dams <- read_sf(dsn = here("data", "ca_eco_region"), layer = "California_Jurisdictional_Dams") # already set crs to 4326
+```
+
+
+```{r}
+### Make a map of dams in California, overlayed on eco-regions, with outlines of CA counties
+ggplot(data = ca_counties) +
+  geom_sf(color = "black",
+          size = 0.1) +
+  geom_sf(data = ca_eco, 
+          aes(fill = region),
+          alpha = 0.4,
+          color = "NA",
+          show.legend = FALSE) +
+  geom_sf(data = ca_dams,
+          size = 0.5, 
+          alpha = 0.4) +
+  theme_bw()
+  
+```
+
+
+
+
+```{r}
+### Explore SB county eco-regions
+sb <- ca_counties %>% 
+  filter(NAME == "Santa Barbara")
+
+# clip eco-region data to only include infotmation within SB county, use st_intersection
+
+eco_clip <- st_intersection(ca_eco, sb)
+
+# Now let's plot it!
+
+ggplot() +
+  geom_sf(data = ca_counties, 
+          fill = "gray90", 
+          color = "gray80",
+          size = 0.2) +
+  geom_sf(data = eco_clip, 
+          aes(fill = region),
+          alpha = 0.3,
+          color = "white",
+          size = 0.4,
+          show.legend = FALSE) +
+  coord_sf(xlim = c(-121, -119),
+           ylim = c(33.5, 35.5)) +
+  scale_fill_manual(values = c("magenta", "gold2", "blue")) +
+  theme_bw()
+
+```
+
+
+
+```{r}
+### Create interactive map with `tmap`
+sb_clip_tmap <- tm_basemap("Esri.WorldImagery") + #?tm_basemap to see link to all options
+  tm_shape(eco_clip) +
+  tm_fill("region", palette = c("orange", "purple", "green"),
+          alpha = 0.5)
+
+tmap_mode("view") # set tmap to interactive viewing mode
+sb_clip_tmap
+
+```
+
+
+Make a mock dataset using tribble()
+
+```{r}
+### Create an `sf` object from latitude/longitude recording (e.g. in an Excel file)
+
+my_example <- tribble(
+  ~id, ~lon, ~lat, #column names
+  "tiger", -119.4, 34.35, 
+  "lion", -119.41, 34.39,
+  "bear", -119.43, 34.38
+)
+
+# Convert this to `sf` object:
+animals_sf <- st_as_sf(my_example, coords = c("lon", "lat"), # tell longitude and latitude column in order
+                       crs = 4326) 
+```
+
+
+Make a map using tmap
+
+```{r}
+animal_map <- tm_basemap("Stamen.Watercolor") +
+  tm_shape(animals_sf) +
+  tm_dots(labels = "id", 
+          col = "purple", 
+          size = 0.5)
+
+# tmap set to view mode in previous step
+
+animal_map
+```
+
+
+
+```{r}
+### Chloropleth of dam counts
+intersection <- st_intersection(x = ca_dams, y = ca_counties)
+
+dams_per_county <- intersection %>% 
+  group_by(NAME) %>% 
+  tally() # total number of rows in each group
+
+ca_tot <- ca_counties %>% 
+  st_join(dams_per_county) %>% 
+  select(NAME.x, n) %>% 
+  rename(name = NAME.x) 
+
+ca_tot_zero <- ca_tot %>% 
+  replace_na(list(n = 0)) # replace na with 0; can replace multiple columns in list()
+
+ggplot() +
+  geom_sf(data = ca_tot_zero,
+          aes(fill = n),
+          alpha = 0.7,
+          color = "white",
+          size = 0.2) +
+  scale_fill_continuous(low = "yellow", high = "red") +
+  theme_bw()
+  
+```
+
+Vignettes for sf (google sf package in GitHub)
+"Geocomputation with R" by Robin Lovelace
+
+
+# Mapview
+```{r}
+### Make a world map!
+
+world <- read_sf(dsn = here("data", "TM_WORLD_BORDERS_SIMPL-0.3-1"),
+                 layer = "TM_WORLD_BORDERS_SIMPL-0.3") %>% 
+  clean_names()
+
+# a quick view with `mapview()`
+mapview(world)
+
+world_base <- ggplot(data = world) +
+  geom_sf(aes(fill = pop2005),
+          color = NA) + # fill by population size in 2005; no country border
+  scale_fill_paletteer_c("gameofthrones::margaery")+
+  theme_minimal()
+
+world_base
+
+# crop world_base
+world_base +
+  coord_sf(xlim = c(-20, 50), ylim = c(-40, 40), expand = FALSE)
+```
