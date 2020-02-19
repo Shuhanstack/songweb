@@ -7,6 +7,10 @@
 
 [Shuhan and Allen]()
 
+[Snowshoe hares in Alaska](https://shuhanstack.github.io/songweb/snowshoe)
+
+[Nutrients in vegan vs. non-vegan](https://shuhanstack.github.io/songweb/nutrient)
+
 ### course notes
 
 [making maps](https://shuhanstack.github.io/songweb/mapping)
