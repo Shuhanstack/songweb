@@ -69,6 +69,7 @@ biplot_vegan <- autoplot(pca_vegan,
   
 biplot_vegan
 ```
+
 _**Figure 1: Biplot for main nutrients in vegan foods and food products.** The first and second PCs explained `r round(sum_vegan$importance[3, 2]*100, 2)`% of the total variance. Energy level is correlated with protein, fat and carbohydrates. Data source: FoodData Central._
 
 
