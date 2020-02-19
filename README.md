@@ -5,6 +5,8 @@
 
 ### Projects
 
+[Green Footprint](https://ruoyuwang.shinyapps.io/GreenFootprint/)
+
 [Shuhan and Allen]()
 
 [Snowshoe hares in Alaska](https://shuhanstack.github.io/songweb/snowshoe)
