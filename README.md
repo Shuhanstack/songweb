@@ -1,9 +1,11 @@
-### About me
+## About me
 
 
 [resume]()
 
-### Projects
+## Projects
+
+### Data analysis
 
 [Green Footprint](https://ruoyuwang.shinyapps.io/GreenFootprint/)
 
@@ -17,7 +19,12 @@
 
 [Agricultural land use and watersheds in Hawaii](https://shuhanstack.github.io/songweb/map_hawaii)
 
-### course notes
+
+### GIS
+
+
+
+## course notes
 
 [making maps](https://shuhanstack.github.io/songweb/mapping)
 
