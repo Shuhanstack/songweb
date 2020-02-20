@@ -15,6 +15,8 @@
 
 [Steelhead salmon passage across the Bonneville Dam, Oregon](https://shuhanstack.github.io/songweb/steelhead_salmon_migration)
 
+[Agricultural land use and watersheds in Hawaii](https://shuhanstack.github.io/songweb/map_hawaii)
+
 ### course notes
 
 [making maps](https://shuhanstack.github.io/songweb/mapping)
