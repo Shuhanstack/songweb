@@ -69,7 +69,7 @@ ca_eco <- read_sf(dsn = here("data", "ca_eco_region"), layer = "ca_eco") %>%
   select(US_L3NAME) %>% 
   rename(region = US_L3NAME) %>% 
   st_simplify(dTolerance = 100) %>% # simplify the number of nodes of a polygon
-  st_transform(crs = 4326)
+  st_transform(crs = 4326) # use st_transform when there is crs assigned, use st_crs when there is no crs
 
 # rmapshaper::ms_simplify(), geos_gSimplify()
 
