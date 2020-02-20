@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 
 Hawaii has experienced agricultural land use change from 1980 to 2015, a shift from the plantation era in sugar and pineapple production to growing more diversified crops (State of Hawaii 2016). Agriculture, closely tied to and usually clustered around water sources, uses one-third of all water withdrawn in the US every day (US EPA 2015). In this project, I mapped agricultural land use (1976) and watersheds (2017) in Hawaii main islands (Figure 1) and provided zoomed views to subgroups of islands. 
 
-![_**Figure 1: Hawaii main islands.** Image download from [mother's niche](https://mothersniche.com/hawaiian-islands/)._](Hawaiian_Islands_Map.jpg){width=50%}
+![_**Figure 1: Hawaii main islands.** Image download from [mother's niche](https://mothersniche.com/hawaiian-islands/)._](Hawaiian_Islands_Map.jpg){width=70%}
 
 
 ## Data Source
