@@ -1,0 +1,244 @@
+---
+title: "Spatial Analysis"
+author: "Shuhan Song"
+date: "2/13/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+```{r}
+# Attach packages 
+library(tidyverse)
+library(here)
+library(janitor)
+library(raster)
+library(sf)
+library(tmap)
+library(tmaptools)
+library(gstat)
+```
+
+
+## Grand Canyon GeoTIFF
+```{r}
+gc_dem <- raster(here("data", "gc_dem.tif"))
+
+# look at it using plot()
+
+plot(gc_dem)
+```
+
+```{r}
+# check the CRS
+gc_dem@crs # unit in meters, need to convert to coordinate
+
+# check extent
+gc_dem@extent
+
+# reprojection
+# creating a wgs84 with latlong
+
+wgs84 <- "+proj=longlat +datum=WGS84 +ellps=WGS84 +no_defs" # made by changing "+proj=utm +zone=12 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0"
+
+gc_reproj <- raster::projectRaster(gc_dem, crs = wgs84, method = "bilinear")
+
+gc_reproj@extent
+```
+
+## Crop raster to a smaller area:
+```{r}
+# define boundary
+bounds <- as(extent(-112.4, -112.0, 36.1, 36.3), "SpatialPolygons") # order of numbers follow 'extent'
+ 
+# set boundary with the same crs as raster gc_reproj
+crs(bounds) <- crs(gc_reproj)
+
+# crop gc_reproj
+gc_crop <- raster::crop(gc_reproj, bounds)
+
+# look at gc_crop
+plot(gc_crop)
+```
+
+
+## Resampling using the `raster::aggregate()` function:
+```{r}
+gc_agg <- raster::aggregate(gc_crop, fact = 10)
+
+plot(gc_agg)
+```
+
+
+## Now, get into ggplot
+
+```{r}
+# convert data to a dataframe
+gc_df <- as.data.frame(gc_agg, xy = TRUE) # be carefull to add the coordinates
+
+ggplot(data = gc_df, aes(x = x, y = y)) +
+  geom_raster(aes(fill = gc_dem)) +
+  coord_quickmap() + # adjust coordination
+  theme_minimal() +
+  scale_fill_gradientn(colors = c("purple", "magenta", "pink", "white"))
+```
+
+## Select cells that match certain criteria
+
+```{r}
+gc_hab <- gc_crop
+
+# set any cells outside of [1000-1500] to NA
+gc_hab[gc_hab > 1500 | gc_hab < 1000] <- NA
+
+plot(gc_hab)
+```
+
+
+## Make interactive map
+
+```{r}
+tmap_mode("view") # make it interactive
+tm_shape(gc_hab) +
+  tm_raster(legend.show = FALSE,
+            palette = "plasma")
+```
+
+
+## Kriging rain in Kansas
+
+```{r}
+# read in KS countries shapefile data
+
+ks_counties <- read_sf(here("data", "ks_counties", "ks_counties_shapefile.shp"))
+
+# look at it
+plot(ks_counties)
+
+# check crs
+sf::st_crs(ks_counties)
+# we will set the CRS
+
+# set to EPSG 4326
+st_crs(ks_counties) <- 4326
+
+plot(ks_counties)
+
+
+ggplot(data = ks_counties) +
+  geom_sf()
+```
+
+## Plot rainfall in Kansas
+```{r}
+# read in rainfall data
+
+ks_rain <- read_csv(here("data", "ks_rain.csv")) %>% 
+  clean_names() # rainfall in unit inches
+
+# update ks_rain data to be look at spatial points
+
+ks_sf <- st_as_sf(ks_rain, coords = c("lon", "lat"), crs = 4326)
+
+# add rainfall to KS
+
+ggplot() +
+  geom_sf(data = ks_counties) +
+  geom_sf(data = ks_sf, 
+          aes(color = amt,
+              size = amt),
+          show.legend = FALSE) +
+  theme_minimal() +
+  scale_color_gradientn(colors = c("navy", "blue", "skyblue"))
+```
+
+## Kriging to predict rainfall
+```{r}
+ks_sp <- sf::as_Spatial(ks_sf)
+
+class(ks_sp)
+```
+
+```{r}
+# make a spatial pixels grid that we'll make predictions over
+lat <- seq(37, 40, length.out = 200)
+long <- seq(-94.6, -102, length.out = 200)
+
+# make into spatial grid
+grid <- expand.grid(lon = long, lat = lat)
+grid_sf <- st_as_sf(grid, coords = c("lon", "lat"), crs = 4326) # from df -> sf
+grid_sp <- as_Spatial(grid_sf) # from sf -> spatial analysis ok date type (sp)
+```
+
+#### Make a variogram
+```{r}
+ks_vgm <- variogram(amt ~ 1, data = ks_sp)
+plot(ks_vgm)
+
+# estimate parameters:
+# nugget = 0.1
+# sill ~? 1.0
+# range ~? 200
+```
+
+
+```{r}
+# fit the points in variogram
+ks_vgm_fit <- fit.variogram(ks_vgm, model = vgm(nugget = 0.1, psill = 1.2, range = 200, model = "Sph")) #"Sph" = spherical, "Exp" = exponential, "Gau" = gausian
+
+ks_vgm_fit
+plot(ks_vgm, ks_vgm_fit)
+```
+
+```{r}
+# Krig now
+
+ks_krige <- krige(amt ~ 1, ks_sp, grid_sp, model = ks_vgm_fit)
+
+#ks_krige@data look at predicted value and variance (uncertain of prediction)
+
+# plot it in sp::spplot
+spplot(ks_krige, "var1.pred")
+```
+#### plot it with `ggplot`
+```{r}
+# make a data frame of kriged predictions
+ks_df <- data.frame(ks_krige@data["var1.pred"],
+                    ks_krige@data["var1.var"],
+                    ks_krige@coords) %>% 
+  rename(longitude = coords.x1,
+         latitude = coords.x2)
+
+# df -> sf
+rain_sf <- st_as_sf(ks_df, coords = c("longitude", "latitude"), crs = 4326)
+
+ggplot(rain_sf) +
+  geom_sf(aes(color = var1.pred))
+```
+
+#### Crop to actual Kansas outline
+
+```{r}
+# get Kansas boundary
+ks <- read_sf(dsn = here("data", "states"), layer = "cb_2017_us_state_20m") %>% 
+  clean_names() %>% 
+  dplyr::select(name) %>% 
+  filter(name == "Kansas") %>% 
+  st_transform(crs = 4326)
+
+plot(ks)
+
+```
+
+```{r}
+# crop rainfall prediction in Kansas
+rain_sf_ks <- st_intersection(rain_sf, ks)
+
+ggplot(data = rain_sf_ks) +
+  geom_sf(aes(color = var1.pred),
+          show.legend = FALSE) +
+  theme_minimal()
+```
+

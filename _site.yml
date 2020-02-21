@@ -1,0 +1,19 @@
+name: "Shuhan's Personal Website"
+navbar: 
+  title: "Home"
+  left:
+  - text: "Project"
+    href: project.html
+  - text: "Code behind Project" 
+    href: code_project.html
+  - text: "My DIY"
+    href: my_diy.html
+  - text: "About me"
+    href: about_me.html
+output_dir: "."
+output:
+  html_document:
+    theme: yeti
+    highlight: textmate
+    include:
+      after_body: _footer.html
