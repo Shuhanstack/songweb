@@ -2,7 +2,10 @@
 title: "Nutrients in vegan foods and regular foods"
 author: "Shuhan Song"
 date: "1/26/2020"
-output: html_document
+output:  
+  html_document:  
+    toc: true  
+    toc_float: true  
 ---
 
 ```{r setup, include=FALSE}

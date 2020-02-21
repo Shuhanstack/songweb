@@ -2,7 +2,10 @@
 title: "Snowshoe hares in Alaska"
 author: "Shuhan Song"
 date: "1/25/2020"
-output: html_document
+output:  
+  html_document:  
+    toc: true  
+    toc_float: true  
 ---
 
 ```{r setup, include=FALSE}
@@ -16,8 +19,6 @@ library(kableExtra)
 library(ggrepel)
 library(ggfortify)
 ```
-
-# Task 1
 
 ### Introduction
 
@@ -43,7 +44,7 @@ I used capture-recapture data of snowshoe hares at five locations in the Bonanza
 
 ```{r}
 # read in snowshoe data
-snowshoe <- read_csv(here("project", "assignment1", "data", "showshoe_lter.csv"))
+snowshoe <- read_csv(here("data", "showshoe_lter.csv"))
 ```
 
 ```{r, eval=FALSE}
