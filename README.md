@@ -11,13 +11,13 @@
 
 [Shuhan and Allen]()
 
-[Snowshoe hares in Alaska](https://shuhanstack.github.io/songweb/snowshoe)
+[Snowshoe hares in Alaska](projects/snowshoe.html)
 
 [Nutrients in vegan vs. non-vegan](projects/nutrient.html)
 
-[Steelhead salmon passage across the Bonneville Dam, Oregon](https://shuhanstack.github.io/songweb/steelhead_salmon_migration)
+[Steelhead salmon passage across the Bonneville Dam, Oregon](projects/steelhead_salmon_migration.html)
 
-[Agricultural land use and watersheds in Hawaii](https://shuhanstack.github.io/songweb/map_hawaii)
+[Agricultural land use and watersheds in Hawaii](projects/map_hawaii.html)
 
 
 ### GIS
