@@ -1,7 +1,4 @@
 ---
-title: "about me"
-author: "Shuhan Song"
-date: "2/21/2020"
 output: html_document
 ---
 

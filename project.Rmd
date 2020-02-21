@@ -15,7 +15,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 [Green Footprint](https://ruoyuwang.shinyapps.io/GreenFootprint/)
 
-[Shuhan and Allen]()
 
 [Snowshoe hares in Alaska](projects/snowshoe.html)
 
@@ -27,3 +26,5 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 ### GIS
+
+[Sea level rise in Santa Barbara, CA](projects/sb_sea_level_rise.pdf)
