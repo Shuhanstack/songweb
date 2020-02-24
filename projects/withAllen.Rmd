@@ -2,7 +2,11 @@
 title: "Shuhan and Allen"
 author: "Shuhan Song"
 date: "2/18/2020"
-output: html_document
+output: 
+ html_document:
+   theme: simplex
+    highlight: textmate
+
 ---
 
 ```{r setup, include=FALSE}
