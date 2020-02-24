@@ -5,17 +5,46 @@ output: html_document
 <br>
 <br>
 
-## Tapestry
 
+<style>
+  .col2 {
+    columns: 2 200px;         /* number of columns and width in pixels*/
+    -webkit-columns: 2 200px; /* chrome, safari */
+    -moz-columns: 2 200px;    /* firefox */
+  }
+</style>
+ 
+<div class="col2">
+**Tapestry - Wetland**
+
+![](gallery/Wetland/1.pic_hd.jpg)
 What to take a closer look? [Yes](gallery/tap_wetland.html)!
 
-![Wetland](gallery/Wetland/1.pic_hd.jpg){width=80%}
+**Column 2**
+
+![](gallery/Wetland/1.pic_hd.jpg)
+
+</div>
+
 
 <br>
 
-## Colorful nature
+ 
+<div class="col2">
+**Bird of Paradise Flower (_Strelitzia reginae_)**
 
-![Bird of Paradise Flower (*Strelitzia reginae*)](gallery/BirdOfParadise.jpg){width=80%}
+![](gallery/BirdOfParadise.jpg)
+
+<br>
+<br>
+
+**Cortez Rainbow Wrasse (*Thalassoma lucasanum*)**
+
+![](gallery/CortezRainbowWrasse.jpg)
+
+</div>
 
 
-![Cortez Rainbow Wrasse (*Thalassoma lucasanum*)](gallery/CortezRainbowWrasse.jpg){width=80%}
+
+
+
