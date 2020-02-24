@@ -6,7 +6,9 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Projects
+
+<br>
+<br>
 
 ### Data analysis
 
