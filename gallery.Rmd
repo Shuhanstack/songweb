@@ -2,7 +2,21 @@
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+<br>
+<br>
 
+## Tapestry
+
+What to take a closer look? [Yes](gallery/tap_wetland.html)!
+
+![Wetland](gallery/Wetland/1.pic_hd.jpg){width=80%}
+
+<br>
+<br>
+
+## Colorful nature
+
+![Bird of Paradise Flower (*Strelitzia reginae*)](gallery/BirdOfParadise.jpg){width=80%}
+
+
+![Cortez Rainbow Wrasse (*Thalassoma lucasanum*)](gallery/CortezRainbowWrasse.jpg){width=80%}
