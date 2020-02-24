@@ -11,6 +11,6 @@ navbar:
 output_dir: "."
 output:
   html_document:
-    theme: jekyll-theme-dinky
+    theme: simplex
     highlight: textmate
 

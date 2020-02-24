@@ -1,0 +1,206 @@
+---
+title: "Steelhead salmon passage across the Bonneville Dam in Columbia River, Oregon (1939-2019)"
+subtitle: "Time series data analysis"
+author: "Shuhan Song"
+date: "2/18/2020"
+output:  
+  html_document:  
+    toc: true  
+    toc_float: true  
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+## Introduction
+
+Adult steelhead salmon (*Oncorhynchus mykiss*) migrate from ocean to freshwater streams to spawn every year. In Columbia River, most steelhead adults return during summer time after two years at sea (“Columbia River Salmon, Pacific Northwest | Chinook Salmon” n.d.). About 10 million to 16 million adult salmon, including steelhead, were considered to return to the Columbia River each year to spawn prior to about 1850 before the population was depleted by European migration and rarely peaked to 2 million now (“Salmon and steelhead” n.d.). Steelhead spawn on gravel surfaces without excessive silt. Female steelhead will dig nests in the area with suitable gravel composition, water depth, and velocity, following which males will compete for right to breed with females (“Natural history” n.d.). In this project, I looked at steelhead passage data across the Bonneville Dam in Columbia River, Oregon (1939-2019) and performed time series analysis to explore the monthly and yearly trend of migration across the Bonneville Dam.
+
+
+![](image/dam picture.png){width=70%}
+
+_**Bonneville Dam in Oregon.** Created with [Google map](https://www.google.com/maps/place/Bonneville+Dam,+Cascade+Locks,+OR+97014/@46.1316382,-124.4946707,6.48z/data=!4m5!3m4!1s0x5495e7d00d2ce141:0xb922e9e1f966198c!8m2!3d45.6442837!4d-121.9406369) (Feb. 20th 2020)._
+
+![](image/steelhead.jpeg)
+
+_**Steelhead Salmon (Oncorhynchus mykiss).** Image downloaded from [NSEA](https://www.n-sea.org/steelhead-trout)._
+
+
+## Data source and method
+
+The passage data of steelhead was downloaded from Columbia River DART (Data Access in Real Time) of Columbia Basin Research (Columbia River DART 2019). The project uses adult passage of steelhead salmon from Jan. 1st 1939 to Dec. 31st 2019. I first ploted daily number of passage during the above time period, then made monthly season plot from 1939 to 2019, and tracked the overall trend by summing up and plotting the annual total of passage during the 41 years. I performed decomposition of the time series data and checked residuals and ACF.
+
+
+## Play with the data
+
+```{r}
+# attach packages
+library(tidyverse)
+library(here)
+library(janitor)
+library(skimr)
+library(tsibble)
+library(feasts)
+library(fabletools)
+library(fable)
+library(forecast)
+library(patchwork)
+```
+
+
+```{r}
+# read in data and clean variable names to code-friendly mode
+cbr_fish <- read_csv(here("data", "cbr_fish_passage_bonneville_allyrs_steelhead.csv")) %>% 
+  clean_names()
+
+# clean variable "mm_dd" to separate month and day
+cbr_fish_clean <- cbr_fish %>% 
+  separate(mm_dd, into = c("day", "month"), sep = "-") %>% 
+  mutate(month_num = match(month, month.abb)) # convert month to number
+
+# create variable of year-month
+cbr_fish_clean$yyyymm <- zoo::as.yearmon(paste(cbr_fish_clean$year, cbr_fish_clean$month_num), "%Y %m") 
+
+# create variable of date
+cbr_fish_clean$date <- zoo::as.Date(paste(cbr_fish_clean$year, cbr_fish_clean$month_num, cbr_fish_clean$day), "%Y %m %d") 
+```
+
+```{r, eval=FALSE}
+# look at the data
+skim(cbr_fish_clean)
+```
+
+### Time series plot of daily observation
+
+Looking at the daily passage plot, there was a seasonal cycle of steelhead passage across the Bonneville Dam, where an equal period of about one year was relatively clear (Figure 1).
+
+```{r}
+# plot daily number of passage
+ggplot(cbr_fish_clean, 
+       aes(x = date, 
+           y = value)) +
+  geom_line(color = "salmon") +
+  theme_light() +
+  labs(x = "Time",
+       y = "Salmon passage (fish/day)")
+```
+
+_**Figure 1: Daily observations of steelhead passage.** There were more higher peaks after 1980 than before that. Seasonal cycle was observed. Data source: Columbia River DART 2019._
+
+### Plot seasonality
+
+```{r}
+# summarize the data by year month and change year month variable to yearmonth, Date class for conversion to tsibble format.
+fish_month_year <- cbr_fish_clean %>% 
+  group_by(yyyymm)  %>% 
+  summarize(value = sum(value, na.rm = TRUE)) %>% 
+  mutate(ym = yearmonth(yyyymm),
+         fish = "Steelhead Salmon")
+
+# conversion to tsibble
+fish_ts <- as_tsibble(fish_month_year, key = fish, index = ym)
+
+# make subseries plot
+fish_ggsubse <- fish_ts %>% 
+  gg_subseries(value)  +
+  theme_light() +
+  labs(x = "Year, from 1939 to 2019 for each month",
+       y = "Salmon passage \n(fish/month)") +
+  theme(axis.text.x = element_blank())
+
+# make season plot
+fish_ggsea <- fish_ts %>% 
+  gg_season(value,
+            alpha = 0.4) +
+  theme_light() +
+  labs(x = "Month",
+       y = "Salmon passage \n(fish/month)") 
+```
+
+
+The annual massive migration event of steelhead across Bonneville Dam in Columbia River, Oregon began in June and ended in October (Figure 2). The total number of salmon passing the dam has increased from 1940s to 2010s. The peak of passage also shifted from July to August. 
+
+```{r}
+# plot in patch
+fish_ggsubse / fish_ggsea
+```
+
+_**Figure 2: Seasonality plot (monthly) of steelhead passage.** Upper plot is subseries plot while the lower one is season plot. There was a clear seasonality with a period of one year, though the peak slightly shifted from July to August from 1940s to 2010s. Data source: Columbia River DART 2019._
+
+### Annual steelhead passage counts
+
+Overall, the steelhead population migrate to Columbia River across the Bonneville Dam was recovering (Figure 3). The number of passage increased from 1939 to 2019, while the fluctutation among years was also getting greater. Most years closer to the present had more passage in the past, which was a good sign for the conservation efforts going on for steelhead.
+
+```{r}
+# summarize the annual total passge
+fish_annual <- cbr_fish %>% 
+  group_by(year) %>% 
+  summarize(value = sum(value, na.rm = TRUE))
+
+ggplot(data = fish_annual,
+       aes(x = year, 
+           y = value)) +
+  geom_line(color = "salmon2") + # plot the line connecting the dots
+  geom_point(color = "salmon2", # plot the point
+             size = 0.8,
+             alpha = 0.8) +
+  theme_light() +
+  labs(x = "Year",
+       y = "Salmon passage (fish/year)")
+```
+
+_**Figure 3: Overall trend of steelhead passing the Bonneville Dam.** The number of  steelhead salmon passing the dam generally increased from 1939 to 2019, though the lowest annual passage was occured in 2019. Data source: Columbia River DART 2019._
+
+### Decompostion of time series data
+
+Decomposition of the time series data of steelhead used additive relations between trend, season, and remainders (Figure 4). ACF plot showed strong positive correlations among observations in a time lag of 12 months or a multiple of 12 months (Figure 5).  
+
+```{r}
+# decompostion of the time series data with window 10
+fish_dcmp <- fish_ts %>%  
+  model(STL(value ~ season(window = 10))) # how to choose window??
+
+components(fish_dcmp) %>% 
+  autoplot() + 
+  theme_light() +
+  labs(x = "Time") 
+```
+
+_**Figure 4: Decomposition of steelhead passage time series.** The magnitude of seasonal component varied across time, which greatly increased after 1980. Trend component also increased after 1980. Data source: Columbia River DART 2019._
+
+```{r}
+fish_acf <- fish_ts %>% 
+  ACF(value) %>% 
+  autoplot() +
+  theme_light() +
+  labs(x = "lag[1 month]",
+       y = "ACF")
+
+# add residuals to a dataframe
+fish_dcmp_residual <- data.frame(residual = c(components(fish_dcmp)$remainder))
+
+# plot histogram of residuals
+fish_res_plot <- ggplot(data = fish_dcmp_residual, 
+                        aes(x = residual)) +
+  geom_histogram(fill = "white",
+                 color = "salmon3") +
+  theme_light() +
+  labs(x = "Decomposition residuals value",
+       y = "Count")
+
+
+fish_acf / fish_res_plot
+```
+
+_**Figure 5: ACF and histogram of decomposition residuals**. ACF plot clearly showed strong positive correlation between observations in a time lag of 12 months (one year) or multiples of 12 months. Residuals of decompostion generally follwed a normal distribution with a mean around zero. Data source: Columbia River DART 2019._
+
+## Reference
+
+Columbia River DART, Columbia Basin Research, University of Washington. (2019). Adult Passage Graphics & Text. Available from http://www.cbr.washington.edu/dart/query/adult_graph_text
+
+Columbia River Salmon, Pacific Northwest | Chinook Salmon. (n.d.). . https://www.critfc.org/fish-and-watersheds/columbia-river-fish-species/columbia-river-salmon/.
+
+Natural history. (n.d.). . https://www.biologicaldiversity.org/species/fish/central_California_coast_steelhead_trout/natural_history.html.
+
+Salmon and steelhead. (n.d.). . https://www.nwcouncil.org/reports/columbia-river-history/salmonandsteelhead.
