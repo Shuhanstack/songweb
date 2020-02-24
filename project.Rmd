@@ -21,8 +21,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 [Steelhead salmon passage across the Bonneville Dam, Oregon](projects/steelhead_salmon_migration.html)
 
+- see [code](projects/steelhead_salmon_migration_code.html) behind
+
 [Agricultural land use and watersheds in Hawaii](projects/map_hawaii.html)
 
+- see [code](projects/map_hawaii_code.html) behind
 
 ### GIS
 
