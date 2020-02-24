@@ -5,4 +5,4 @@
 
 [spatial analysis](class_notes/spatial_analysis.html)
 
-[Time series with map](class_notes/us-renewables.html)
+[Time series](class_notes/us-renewables.html)
