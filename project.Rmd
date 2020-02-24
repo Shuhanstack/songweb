@@ -3,7 +3,7 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
@@ -25,13 +25,11 @@ knitr::opts_chunk$set(echo = TRUE)
 - see [code](projects/map_hawaii_code.html) behind
 
 <br>
-<br>
 
 ## Shiny app projects
 
 [Green Footprint](https://ruoyuwang.shinyapps.io/GreenFootprint/)
 
-<br>
 <br>
 
 ## course notes

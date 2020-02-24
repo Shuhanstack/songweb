@@ -12,7 +12,6 @@ output: html_document
 [Methanogenesis and Methane Emission](projects/paper//Methanogenesis.pdf)
 
 <br>
-<br>
 
 ## Senior Thesis
 
