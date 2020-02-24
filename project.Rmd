@@ -12,9 +12,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Data analysis
 
-[Green Footprint](https://ruoyuwang.shinyapps.io/GreenFootprint/)
-
-
 [Snowshoe hares in Alaska](projects/snowshoe.html)
 
 [Nutrients in vegan vs. non-vegan](projects/nutrient.html)
@@ -27,11 +24,15 @@ knitr::opts_chunk$set(echo = TRUE)
 
 - see [code](projects/map_hawaii_code.html) behind
 
-## GIS
+<br>
+<br>
 
-[Sea level rise in Santa Barbara, CA](projects/sb_sea_level_rise.pdf)
+## Shiny app projects
 
+[Green Footprint](https://ruoyuwang.shinyapps.io/GreenFootprint/)
 
+<br>
+<br>
 
 ## course notes
 

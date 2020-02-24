@@ -2,8 +2,12 @@ name: "Shuhan's Personal Website"
 navbar: 
   title: "Home"
   left:
-  - text: "Project"
+  - text: "Data in R"
     href: project.html
+  - text : "GIS"
+    href: gis.html
+  - text: "Paper"
+    href: paper.html
   - text: "Gallery"
     href: gallery.html
   - text: "About me"
