@@ -1,0 +1,18 @@
+---
+output: html_document
+---
+
+<br>
+<br>
+
+## ArcMap
+
+[Sea level rise in Santa Barbara, CA](projects/gis/sb_sea_level_rise.pdf)
+
+[Potential wind turbine sites in Santa Barbara, CA](projects/gis/sb_wind_turbines_site.pdf)
+
+- This project was part of the curriculum of [ESM 263](https://frew.eri.ucsb.edu/private/ESM263/) in MESM program at Bren School of Environmental Science & Management. 
+
+- See the [model](projects/gis/sb_wind_turbines_site.tbx) for this project
+
+- See the [data](projects/gis/sb_wind_turbines_site.7z) for this project 
