@@ -4,15 +4,13 @@ navbar:
   left:
   - text: "Project"
     href: project.html
-  - text: "Code behind Project" 
-    href: code_project.html
-  - text: "My DIY"
-    href: my_diy.html
+  - text: "Gallery"
+    href: gallery.html
   - text: "About me"
     href: about_me.html
 output_dir: "."
 output:
   html_document:
-    theme: paper
+    theme: jekyll-theme-dinky
     highlight: textmate
 

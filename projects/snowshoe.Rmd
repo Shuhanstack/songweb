@@ -24,19 +24,19 @@ library(ggfortify)
 
 The snowshoe hares (*Lepus americanus*), named after its big hind feet, is a keystone prey species in northern boreal forests in North America. They are shy and secretive and prefer habitats with a dense shrub layer. The rabbits active year-round and turn their fur white during the winter and rusty brown during the summer for camouflage. 
 
-![Snowshoe hares in winter](white.jpg){width=700px} 
+![Snowshoe hares in winter](image/white.jpg){width=700px} 
 
 
 
-![Snowshoe hares in summer](black.jpg){width=700px}
+![Snowshoe hares in summer](image/black.jpg){width=700px}
 
-*Picture in winter was downloaded from [Cottage Life](https://cottagelife.com/outdoors/wild-profile-meet-the-snowshoe-hare/) and the one in summer was from [Montana  Public Radio](https://www.mtpr.org/post/strange-practical-why-snowshoe-hares-eat-their-own-feces).*
+*Picture in winter was downloaded from [Cottage Life](https://cottagelife.com/outdoors/wild-profile-meet-the-snowshoe-hare/). The one in summer was from [Montana  Public Radio](https://www.mtpr.org/post/strange-practical-why-snowshoe-hares-eat-their-own-feces).*
 
 ### Data Source and Method
 
 I used capture-recapture data of snowshoe hares at five locations in the Bonanza Creek Experimental Forest of Tanana Valley, Alaska to explore how the weight of snowshoe hares is related to sex and changed with time. The data was provided by Bonanza Creek LTER and its time scale ranged from 1999 to 2012, where Snowshoe hares densities peaked in 1999 then declined (Kielland et al. 2017). I looked at the distribution and summary table of weight from 1999 to 2012 and track the weight of 11 individuals captured-recaptured more than 15 times.
 
-![](map.png){width=700px}
+![](image/map.png){width=700px}
 
 *Made from Google Earth Engine on Feb. 4, 2020.*
 
@@ -206,7 +206,7 @@ ggplot(data = snowshoe_trck_wt, aes(x = time, y = mean)) +
 _**Figure 2: Track 11 individual's weight of snowshoe hares for both males and females (2003-2011).** The graph included `r length(unique(filter(snowshoe_trck_parse_date, sex == "Female")$b_key))` females and `r length(unique(filter(snowshoe_trck_parse_date, sex == "Male")$b_key))` males that had more than 15 capture-recapture records and labeled their unqiue animal identifiers in boxes. The population means (2003-2011) for males and females were plotted as dotted line and had the value labeled. Most indivduals in this subset weighted more than the population averages. Data source: Bonanza Creek LTER_
 
 
-### Reference: 
+### Reference
 
 Kielland K., F. S. Chapin, R. W. Ruess. 2017. Snowshoe hare physical data in Bonanza Creek Experimental Forest: 1999-Present. Environmental Data Initiative. https://doi.org/10.6073/pasta/03dce4856d79b91557d8e6ce2cbcdc14.
 

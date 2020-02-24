@@ -164,13 +164,3 @@ hydro_model <- hydro_ts %>%
 
 hydro_model %>% autoplot(filter(hydro_ts, year(month_sep) > 2010))
 ```
-
-### Make a world map!
-
-```{r}
-world <- read_sf(dsn = here("data", "TM_WORLD_BORDERS_SIMPL-0.3-1"),
-                 layer = "TM_WORLD_BORDERS_SIMPL-0.3")
-
-mapview(world)
-```
-

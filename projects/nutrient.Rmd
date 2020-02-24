@@ -23,7 +23,7 @@ The food nutrient data provided by [FoodData Central](https://fdc.nal.usda.gov/i
 
 
 
-![](food.png){width=60%}
+![](image/food.png){width=60%}
 
 *Made with [logoMakr](https://logomakr.com) on Jan. 26, 2020.*
 

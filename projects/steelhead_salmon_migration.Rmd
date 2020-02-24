@@ -16,6 +16,7 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 ```{r}
 # attach packages
 library(tidyverse)
+library(here)
 library(janitor)
 library(skimr)
 library(tsibble)
@@ -31,10 +32,13 @@ library(patchwork)
 Adult steelhead salmon (*Oncorhynchus mykiss*) migrate from ocean to freshwater streams to spawn every year. In Columbia River, most steelhead adults return during summer time after two years at sea (“Columbia River Salmon, Pacific Northwest | Chinook Salmon” n.d.). About 10 million to 16 million adult salmon, including steelhead, were considered to return to the Columbia River each year to spawn prior to about 1850 before the population was depleted by European migration and rarely peaked to 2 million now (“Salmon and steelhead” n.d.). Steelhead spawn on gravel surfaces without excessive silt. Female steelhead will dig nests in the area with suitable gravel composition, water depth, and velocity, following which males will compete for right to breed with females (“Natural history” n.d.). In this project, I looked at steelhead passage data across the Bonneville Dam in Columbia River, Oregon (1939-2019) and performed time series analysis to explore the monthly and yearly trend of migration across the Bonneville Dam.
 
 
-![_**Bonneville Dam in Oregon.** Created with [Google map](https://www.google.com/maps/place/Bonneville+Dam,+Cascade+Locks,+OR+97014/@46.1316382,-124.4946707,6.48z/data=!4m5!3m4!1s0x5495e7d00d2ce141:0xb922e9e1f966198c!8m2!3d45.6442837!4d-121.9406369) (Feb. 20th 2020)._](dam picture.png){width=70%}
+![](image/dam picture.png){width=70%}
 
+_**Bonneville Dam in Oregon.** Created with [Google map](https://www.google.com/maps/place/Bonneville+Dam,+Cascade+Locks,+OR+97014/@46.1316382,-124.4946707,6.48z/data=!4m5!3m4!1s0x5495e7d00d2ce141:0xb922e9e1f966198c!8m2!3d45.6442837!4d-121.9406369) (Feb. 20th 2020)._
 
-![_**Steelhead Salmon (Oncorhynchus mykiss).** Image downloaded from [NSEA](https://www.n-sea.org/steelhead-trout)._](steelhead.jpeg)
+![](image/steelhead.jpeg)
+
+_**Steelhead Salmon (Oncorhynchus mykiss).** Image downloaded from [NSEA](https://www.n-sea.org/steelhead-trout)._
 
 
 ## Data source and method
@@ -46,7 +50,7 @@ The passage data of steelhead was downloaded from Columbia River DART (Data Acce
 
 ```{r}
 # read in data and clean variable names to code-friendly mode
-cbr_fish <- read_csv("cbr_fish_passage_bonneville_allyrs_steelhead.csv") %>% 
+cbr_fish <- read_csv(here("data", "cbr_fish_passage_bonneville_allyrs_steelhead.csv")) %>% 
   clean_names()
 
 # clean variable "mm_dd" to separate month and day
