@@ -1,0 +1,23 @@
+---
+output: html_document
+---
+
+<br>
+<br>
+
+## Term paper
+
+[Why international climate agreements are more likely to fail?](projects/paper/International_climate_agreements.pdf)
+
+[Methanogenesis and Methane Emission](projects/paper//Methanogenesis.pdf)
+
+<br>
+<br>
+
+## Senior Thesis
+
+[Impact of Climate and Snowpack on the Distribution of Amphibian Species in Sierra Nevada](projects/paper/amphibian_thesis.pdf)
+
+- see [poster](projects/paper/amphibian_poster.pdf)
+
+- see [presentation](projects/paper/amphibian_ppt.pdf)
