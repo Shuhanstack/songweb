@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 <br>
 <br>
 
-### Data analysis
+## Data analysis
 
 [Green Footprint](https://ruoyuwang.shinyapps.io/GreenFootprint/)
 
@@ -27,13 +27,13 @@ knitr::opts_chunk$set(echo = TRUE)
 
 - see [code](projects/map_hawaii_code.html) behind
 
-### GIS
+## GIS
 
 [Sea level rise in Santa Barbara, CA](projects/sb_sea_level_rise.pdf)
 
 
 
-### course notes
+## course notes
 
 [making maps](class_notes/mapping.html)
 

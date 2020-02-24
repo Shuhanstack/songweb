@@ -131,20 +131,23 @@ skim(snowshoe_weight_time) # check the number of missing data
 snowshoe_weight_time_rmna <- snowshoe_weight_time %>% 
   drop_na(weight) %>% 
   ungroup()  %>% 
-  mutate(date = mdy(date)) # convert mmddYY to YYYYmmdd
-
+  mutate(date = mdy(date)) %>%  # convert mmddYY to YYYYmmdd
+  mutate(ym = month)
 
 ggplot(data = snowshoe_weight_time_rmna,
        aes(x = date,
            y = weight)) +
+  geom_line(aes(color = sex)) +
   geom_point(size = 0.5,
+             alpha = 0.5,
              aes(color = sex)) +
   facet_grid(sex~.) +
   scale_x_date(date_breaks = "2 years",
                date_labels = "%Y %b") +
   labs(x = "",
        y = "Mean weight of snowshoe hares (g)") +
-  theme_bw()
+  theme_bw() +
+  theme(panel.grid.minor.y = element_blank())
 ```
 
 -----------------------------

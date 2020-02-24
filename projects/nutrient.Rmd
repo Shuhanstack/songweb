@@ -5,7 +5,9 @@ date: "1/26/2020"
 output:  
   html_document:  
     toc: true  
-    toc_float: true  
+    toc_float: true 
+    theme: simplex
+    highlight: textmate 
 ---
 
 ```{r setup, include=FALSE}
