@@ -20,6 +20,6 @@ output: html_document
 <br><br><br><br><br><br><br>      <br><br><br><br><br><br><br>    <br><br><br><br><br><br><br> 
 
 <div  align="center" id="footer">
-  <button type="button" class="btn btn-outline-primary"><a href="project.html" style="color:white">Data in R</a></button>
-  <button type="button" class="btn btn-outline-primary"><a href="paper.html" style="color:white">Paper</a></button>
+  <button type="button" class="btn btn-primary disabled"><a href="project.html" style="color:white">Data in R</a></button>
+  <button type="button" class="btn btn-primary disabled"><a href="paper.html" style="color:white">Paper</a></button>
 </div>

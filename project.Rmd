@@ -87,6 +87,6 @@ knitr::opts_chunk$set(echo = FALSE)
 <br><br><br>
 
 <div  align="center" id="footer">
-  <button type="button" class="btn btn-outline-primary"><a href="index.html" style="color:white">Home</a></button>
-  <button type="button" class="btn btn-outline-primary"><a href="gis.html" style="color:white">GIS</a></button>
+  <button type="button" class="btn btn-primary disabled"><a href="index.html" style="color:white">Home</a></button>
+  <button type="button" class="btn btn-primary disabled"><a href="gis.html" style="color:white">GIS</a></button>
 </div>
