@@ -11,6 +11,10 @@ knitr::opts_chunk$set(echo = FALSE)
     columns: 2 200px;         /* number of columns and width in pixels*/
     -webkit-columns: 2 200px; /* chrome, safari */
     -moz-columns: 2 200px;    /* firefox */
+
+  }
+  .button{
+  background:"white"
   }
 </style>
 
@@ -58,7 +62,7 @@ knitr::opts_chunk$set(echo = FALSE)
   <p>see <a href="projects/map_hawaii_code.html">code</a> behind</p>
   <span class="badge" >map</span>
   
-  <br><br><br><br><br><br><br>
+  <br><br><br><br><br>
 </div>
 
 
@@ -77,8 +81,12 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 <h4>**AnimalDex**</h4>
-  <br><br><br><br><br><br><br>  <br><br>     <br><br><br><br><br><br><br> <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>      <br><br><br><br><br><br><br> <br><br><br><br><br><br><br>
 </div>
 
+<br><br><br>
 
-
+<div  align="center" id="footer">
+  <button type="button" class="btn btn-outline-primary"><a href="index.html" style="color:white">Home</a></button>
+  <button type="button" class="btn btn-outline-primary"><a href="gis.html" style="color:white">GIS</a></button>
+</div>

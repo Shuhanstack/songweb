@@ -20,3 +20,11 @@ output: html_document
 - see [poster](projects/paper/amphibian_poster.pdf)
 
 - see [presentation](projects/paper/amphibian_ppt.pdf)
+
+<br><br><br><br><br><br><br>      <br><br><br><br><br><br><br>    <br><br><br><br><br><br><br> 
+
+
+<div  align="center" id="footer">
+  <button type="button" class="btn btn-outline-primary"><a href="gis.html" style="color:white">GIS</a></button>
+  <button type="button" class="btn btn-outline-primary"><a href="gallery.html" style="color:white">Gallery</a></button>
+</div>

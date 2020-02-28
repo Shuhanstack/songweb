@@ -44,7 +44,11 @@ What to take a closer look? [Yes](gallery/tap_wetland.html)!
 
 </div>
 
+<br><br><br>
 
-
+<div  align="center" id="footer">
+  <button type="button" class="btn btn-outline-primary"><a href="paper.html" style="color:white">Paper</a></button>
+  <button type="button" class="btn btn-outline-primary"><a href="about_me.html" style="color:white">About me</a></button>
+</div>
 
 

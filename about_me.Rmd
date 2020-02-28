@@ -5,3 +5,11 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div  align="center" id="footer">
+  <button type="button" class="btn btn-outline-primary"><a href="gallery.html" style="color:white">Gallery</a></button>
+  <button type="button" class="btn btn-outline-primary"><a href="index.html" style="color:white">Home</a></button>
+</div>
