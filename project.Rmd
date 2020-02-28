@@ -39,3 +39,4 @@ knitr::opts_chunk$set(echo = FALSE)
 [spatial analysis](class_notes/spatial_analysis.html)
 
 [Time series](class_notes/us-renewables.html)
+
