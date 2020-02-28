@@ -3,12 +3,6 @@ title: "Nutrients in vegan foods and regular foods"
 subtitle: "PCA and clustering"
 author: "Shuhan Song"
 date: "1/26/2020"
-output:  
-  html_document:  
-    toc: true  
-    toc_float: true  
-    theme: simplex
-    highlight: textmate
 ---
 
 ```{r setup, include=FALSE}

@@ -3,12 +3,7 @@ title: "Snowshoe hares in Alaska"
 subtitle: "Influence between sex and weight"
 author: "Shuhan Song"
 date: "1/25/2020"
-output:  
-  html_document:  
-    toc: true  
-    toc_float: true  
-    theme: simplex
-    highlight: textmate
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
@@ -48,7 +43,7 @@ I used capture-recapture data of snowshoe hares at five locations in the Bonanza
 
 ```{r}
 # read in snowshoe data
-snowshoe <- read_csv(here("data", "showshoe_lter.csv"))
+snowshoe <- read_csv(here::here("data", "showshoe_lter.csv"))
 ```
 
 ```{r, eval=FALSE}
