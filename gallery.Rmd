@@ -15,9 +15,9 @@ output: html_document
 </style>
  
 <div class="col2">
-
+<br>
 **Tapestry - Wetland**
-
+<br><br>
 ![](gallery/Wetland/1.pic_hd.jpg)
 
 - What to take a closer look? [Yes](gallery/tap_wetland.html)!
