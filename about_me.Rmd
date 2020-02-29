@@ -6,8 +6,13 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+<center>
+<br><br><br><br><br><br><br><br><img alt="" src="projects/image/coming_soon.png" width="350">
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+*Made with [logoMakr](https://logomakr.com)*
+</center>
+
+<br><br><br><br><br><br><br><br><br><br><br>
 
 <div  align="center" id="footer">
   <button type="button" class="btn btn-primary disabled" ><a href="gallery.html" style="color:white" >Gallery</a></button>
