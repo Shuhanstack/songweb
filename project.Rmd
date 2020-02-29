@@ -81,7 +81,9 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 <h4>**AnimalDex**</h4>
-  <br>  <img alt="" src="projects/image/coming_soon.png" width="350">    *Made with [logoMakr](https://logomakr.com).*
+  <br>  <img alt="" src="projects/image/coming_soon.png" width="350">   
+  
+  *Made with [logoMakr](https://logomakr.com).*
 </div>
 
 <br><br><br>
