@@ -78,12 +78,15 @@ knitr::opts_chunk$set(echo = FALSE)
   <br>
   <p>see the <a href="https://devpost.com/software/greentrack-ss-rw">story</a> and <a href="https://github.com/Ruoyu-Wang108/greentrack-ss-rw">GitHub Repo</a></p>
   <span class="badge" >Shinyapp</span>
-
+  <br><br><br>
 
 <h4>**AnimalDex**</h4>
-  <br>  <img alt="" src="projects/image/coming_soon.png" width="350">   
+<br>
+   <img alt="" src="projects/image/coming_soon.png" width="350">   
   
   *Made with [logoMakr](https://logomakr.com).*
+  
+  <span class="badge" >Shinyapp</span>
 </div>
 
 <br><br><br>
