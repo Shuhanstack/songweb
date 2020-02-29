@@ -32,6 +32,7 @@ output: html_document
 
 - This project was part of the curriculum of [ESM 263](https://frew.eri.ucsb.edu/private/ESM263/) in MESM program at Bren School of Environmental Science & Management. 
 
+<br><br>
 
 <h4>**Potential wind turbine sites in Santa Barbara, CA**</h4>
 <a href="projects/gis/sb_wind_turbines_site.pdf">
