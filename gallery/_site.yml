@@ -1,0 +1,9 @@
+name: "Data in R"
+output_dir: "."
+
+output:  
+  html_document:  
+    theme: sandstone
+    highlight: textmate
+
+

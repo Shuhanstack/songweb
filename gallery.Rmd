@@ -20,13 +20,12 @@ output: html_document
 ![](gallery/Wetland/1.pic_hd.jpg)
 What to take a closer look? [Yes](gallery/tap_wetland.html)!
 
-<br><br><br><br><br><br>
+<br>
 
-**Flower Sea**
+**Tapestry - Flower Sea**
 
-![](projects/image/coming_soon.png)
-
-*Made with [logoMakr](https://logomakr.com)*
+![](gallery/Flower_Sea/cover.jpeg)
+[Here](gallery/tap_wetland.html) are the details! Why not take a look?
 
 </div>
 
