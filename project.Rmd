@@ -31,11 +31,11 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 <h4>**Nutrients in vegan vs. non-vegan**</h4>
-<a href="projects/nutrient.html">
+  <a href="projects/nutrient.html">
     <img alt="" src="projects/image/food.png" width="390">
-</a>
-<br><br>
-<span class="badge" >PCA</span>
+  </a>
+  <br><br>
+  <span class="badge" >PCA</span>
 
 </div>
 
@@ -48,17 +48,29 @@ knitr::opts_chunk$set(echo = FALSE)
     <img alt="" src="projects/image/steelhead.jpeg">
   </a>
   <br><br>
-  <ul><li><p>see <a href="projects/steelhead_salmon_migration_code.html">code</a> behind </p></li></ul>
-  <span class="badge" >Time Series</span>
+  <ul>
+    <li>
+      <p>
+        see <a href="projects/steelhead_salmon_migration_code.html">code</a> behind
+      </p>
+    </li>
+  </ul>
+  <span class="badge">Time Series</span>
 
 
 <h4>**Agricultural land use and watersheds in Hawaii**</h4>
 
-<a href="projects/map_hawaii.html">
+  <a href="projects/map_hawaii.html">
     <img alt="" src="projects/image/Hawaiian_Islands_Map.jpg">
   </a>
   <br><br>
-  <ul><li><p>see <a href="projects/map_hawaii_code.html">code</a> behind</p></li></ul>
+  <ul>
+    <li>
+      <p>
+        see <a href="projects/map_hawaii_code.html">code</a> behind
+      </p>
+    </li>
+  </ul>
   
   <span class="badge" >map</span>
   
@@ -72,11 +84,17 @@ knitr::opts_chunk$set(echo = FALSE)
 
 <div class="col2">
 <h4>**Green Footprint**</h4>
-<a href="https://ruoyuwang.shinyapps.io/GreenFootprint/">
+  <a href="https://ruoyuwang.shinyapps.io/GreenFootprint/">
     <img alt="" src="projects/image/green_fp.png" width="350">
   </a>
   <br><br>
-  <ul><li><p>see the <a href="https://devpost.com/software/greentrack-ss-rw">story</a> and <a href="https://github.com/Ruoyu-Wang108/greentrack-ss-rw">GitHub Repo</a></p></li></ul>
+  <ul>
+    <li>
+      <p>
+        see the <a href="https://devpost.com/software/greentrack-ss-rw">story</a> and <a href="https://github.com/Ruoyu-Wang108/greentrack-ss-rw">GitHub Repo</a>
+      </p>
+    </li>
+  </ul>
   <span class="badge" >Shinyapp</span>
   <br><br><br>
 
@@ -92,6 +110,10 @@ knitr::opts_chunk$set(echo = FALSE)
 <br><br><br>
 
 <div  align="center" id="footer">
-  <button type="button" class="btn btn-primary disabled"><a href="index.html" style="color:white">Home</a></button>
-  <button type="button" class="btn btn-primary disabled"><a href="gis.html" style="color:white">GIS</a></button>
+  <button type="button" class="btn btn-primary disabled">
+    <a href="index.html" style="color:white">Home</a>
+  </button>
+  <button type="button" class="btn btn-primary disabled">
+    <a href="gis.html" style="color:white">GIS</a>
+  </button>
 </div>
