@@ -7,12 +7,16 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 <center>
-<br><br><br><br><br><br><br><br><img alt="" src="projects/image/coming_soon.png" width="350">
 
-*Made with [logoMakr](https://logomakr.com)*
+
+
+
+<br><br>
+<img src="resume_colorful.png">
+
 </center>
 
-<br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
 
 <div  align="center" id="footer">
   <button type="button" class="btn btn-primary disabled" ><a href="gallery.html" style="color:white" >Gallery</a></button>
