@@ -21,31 +21,12 @@ knitr::opts_chunk$set(echo = FALSE)
 <br>
 
 
-<div class="col2">
-<h4>**Snowshoe hares in Alaska**</h4>
-<a href="projects/snowshoe.html">
-    <img alt="" src="projects/image/white_sq.jpeg" width="350">
-</a>
-<br><br>
-<span class="badge" >Basic</span>
-
-
-<h4>**Nutrients in vegan vs. non-vegan**</h4>
-  <a href="projects/nutrient.html">
-    <img alt="" src="projects/image/food.png" width="390">
-  </a>
-  <br><br>
-  <span class="badge" >PCA</span>
-
-</div>
-
-<br>
 
 <div class="col2">
 
 <h4>**Steelhead passage across the Bonneville Dam**</h4>
   <a href="projects/steelhead_salmon_migration.html">
-    <img alt="" src="projects/image/steelhead.jpeg">
+    <img alt="" src="projects/image/steelhead.jpeg" height="400">
   </a>
   <br><br>
   <ul>
@@ -57,35 +38,49 @@ knitr::opts_chunk$set(echo = FALSE)
   </ul>
   <span class="badge">Time Series</span>
 
-
-<h4>**Agricultural land use and watersheds in Hawaii**</h4>
-
-  <a href="projects/map_hawaii.html">
-    <img alt="" src="projects/image/Hawaiian_Islands_Map.jpg">
+<h4>**Milan Kundera**</h4>
+  <a href="projects/text_mining_on_the_unbearable.html">
+    <img alt="" src="projects/image/unbearable.jpg" height="400">
   </a>
   <br><br>
   <ul>
     <li>
       <p>
-        see <a href="projects/map_hawaii_code.html">code</a> behind
+        see the <a href="projects/text_mining_on_the_unbearable_code.html">code</a> behind</a>
       </p>
     </li>
   </ul>
-  
-  <span class="badge" >map</span>
-  
-  <br><br><br><br><br>
+  <span class="badge" >Text mining</span>
 </div>
 
 
 <br>
 
 
+<div class="col2">
+<h4>**Snowshoe hares in Alaska**</h4>
+  <a href="projects/snowshoe.html">
+    <img alt="" src="projects/image/snowshoe_cover.png" width="350">
+  </a>
+<br><br>
+<span class="badge" >Basic</span>
+<br><br>
+
+<h4>**Nutrients in vegan vs. non-vegan**</h4>
+  <a href="projects/nutrient.html">
+    <img alt="" src="projects/image/food_cover.png" width="350">
+  </a>
+<br><br>
+<span class="badge" >PCA</span>
+
+</div>
+
+<br>
 
 <div class="col2">
 <h4>**Green Footprint**</h4>
   <a href="https://ruoyuwang.shinyapps.io/GreenFootprint/">
-    <img alt="" src="projects/image/green_fp.png" width="350">
+    <img alt="" src="projects/image/green_fp.png" height="350" >
   </a>
   <br><br>
   <ul>
@@ -96,19 +91,41 @@ knitr::opts_chunk$set(echo = FALSE)
     </li>
   </ul>
   <span class="badge" >Shinyapp</span>
-  <br><br><br>
+  <br><br>
 
 <h4>**AnimalDex**</h4>
 <br>
-   <img alt="" src="projects/image/coming_soon.png" width="350">   
+   <img alt="" src="projects/image/coming_soon.png" height="350">   
   
   *Made with [logoMakr](https://logomakr.com).*
   
   <span class="badge" >Shinyapp</span>
 </div>
 
-<br><br><br>
+<br>
 
+<div class="col2">
+<h4>**Agricultural land use and watersheds in Hawaii**</h4>
+  <a href="projects/map_hawaii.html">
+    <img alt="" src="projects/image/Hawaiian_Islands_Map.jpg" height="350">
+  </a>
+  <br><br>
+  <ul>
+    <li>
+      <p>
+        see <a href="projects/map_hawaii_code.html">code</a> behind
+      </p>
+    </li>
+  </ul>
+  <span class="badge" >map</span>
+  
+<h4></h4>
+<br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+</div>
+
+<br><br><br>
 <div  align="center" id="footer">
   <button type="button" class="btn btn-primary disabled">
     <a href="index.html" style="color:white">Home</a>
