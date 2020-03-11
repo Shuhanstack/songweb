@@ -3,11 +3,25 @@ output: html_document
 ---
 
 <style>
-  .col2 {
-    columns: 2 200px;         /* number of columns and width in pixels*/
-    -webkit-columns: 2 200px; /* chrome, safari */
-    -moz-columns: 2 200px;    /* firefox */
-  }
+.column {
+  float: left;
+  padding: 10px;
+}
+
+.left {
+  width: 50%;
+}
+
+.right {
+  width: 50%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 </style>
 
 <br><br><br>
@@ -20,51 +34,48 @@ output: html_document
 
 <br><br><br>
 
-<div class="col2">
+<div class="row">
+  <div class="column left">
 <h4>Wetland</h4>
 ![](gallery/Wetland/1.pic_hd.jpg){width=400}
 <br><br>
-  <li>
-  <p>
-  What to take a closer look? <a href="gallery/tap_wetland.html">Yes</a>!
-  </p>
-  </li>
 <span class="badge" >tapestry</span>
 <br><br>
-
-<h4>Flower Sea</h4>
-![](gallery/Flower_Sea/cover.jpeg){width=400}
-<br><br>
   <li>
-  <p>
-  <a href="gallery/tap_flower_sea.html">Here</a> are the details! Why not take a look?
+  <p>What to take a closer look? <a href="gallery/tap_wetland.html">Yes</a>!
   </p>
   </li>
-<span class="badge" >tapestry</span>
-
+  </div>
+<div class="column right">
+  <h4>Flower Sea</h4>
+  ![](gallery/Flower_Sea/cover.jpeg){width=400}
+  <br><br>
+  <span class="badge" >tapestry</span>
+  <br><br>
+  <li>
+  <p><a href="gallery/tap_flower_sea.html">Here</a> are the details! Why not take a look?</p>
+  </li>
+  </div>
 </div>
 
 
 <br>
 
  
-<div class="col2">
+<div class="row">
+<div class="column left">
 <h4>Bird of Paradise Flower
   <small class="text-muted">(_Strelitzia reginae_)</small>
 </h4>
-
 ![](gallery/BirdOfParadise.jpg){width=400}
-
-<br>
-<br><br>
-
+</div>
+<div row="column right">
 <h4>Cortez Rainbow Wrasser
   <small class="text-muted">(*Thalassoma lucasanum*)</small>
 </h4>
-<br><br><br><br><br><br><br>
+<br><br><br><br><br><br>
 ![](gallery/CortezRainbowWrasse.jpg){width=400}
-
-<br><br><br><br>
+</div>
 </div>
 
 <br><br><br>

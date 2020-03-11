@@ -7,15 +7,25 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 <style>
-  .col2 {
-    columns: 2 200px;         /* number of columns and width in pixels*/
-    -webkit-columns: 2 200px; /* chrome, safari */
-    -moz-columns: 2 200px;    /* firefox */
+.column {
+  float: left;
+  padding: 10px;
+}
 
-  }
-  .button{
-  background:"white"
-  }
+.left {
+  width: 50%;
+}
+
+.right {
+  width: 50%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 </style>
 
 <br><br><br>
@@ -28,107 +38,113 @@ knitr::opts_chunk$set(echo = FALSE)
 
 <br><br><br>
 
-<div class="col2">
+<div class="row">
+<div class="column left">
 <h4>Agriculture and watersheds in Hawaii</h4>
   <a href="projects/map_hawaii.html">
     <img alt="" src="projects/image/Hawaiian_Islands_Map.jpg" width="350" height="220">
   </a>
   <br><br>
+  <span class="badge" >map</span>
+  <br><br>
     <li>
-      <p>
-        see <a href="projects/map_hawaii_code.html">code</a> behind
+      <p>see <a href="projects/map_hawaii_code.html">code</a> behind
       </p>
     </li>
-  <span class="badge" >map</span>
   
+</div>
+<div class="column right">
 <h4>Santa Barbara Creek Chemistry</h4>
 <a href="projects/sb_creek.html">
     <img alt="" src="projects/image/sb_creek.png" width="350" height="220">
   </a>
   <br><br>
+  <span class="badge" >mlr</span> <span class="badge" >pca</span> <span class="badge" >clustering</span>
+  <br><br>
     <li>
-      <p>
-        see <a href="projects/sb_creek_code.html">code</a> behind
+      <p>see <a href="projects/sb_creek_code.html">code</a> behind
       </p>
     </li>
-  <span class="badge" >mlr</span> <span class="badge" >pca</span> <span class="badge" >clustering</span>
 </div>
+</div>
+
 
 <br>
 
 
-<div class="col2">
+<div class="row">
+<div class="column left">
 <h4>Snowshoe hares in Alaska</h4>
   <a href="projects/snowshoe.html">
     <img alt="" src="projects/image/snowshoe_cover.png" width="350">
   </a>
 <br><br>
 <span class="badge" >Basic</span>
-<br><br>
-
+</div>
+<div class="column right">
 <h4>Nutrients in vegan vs. non-vegan</h4>
   <a href="projects/nutrient.html">
     <img alt="" src="projects/image/food_cover.png" width="350">
   </a>
 <br><br>
 <span class="badge" >PCA</span>
-
+</div>
 </div>
 
 <br>
 
-<div class="col2">
-
+<div class="row">
+<div class="column left">
 <h4>Steelhead passing the Bonneville Dam</h4>
   <a href="projects/steelhead_salmon_migration.html">
     <img alt="" src="projects/image/steelhead.jpeg" height="400">
   </a>
   <br><br>
+  <span class="badge">Time Series</span>
+  <br><br>
     <li>
-      <p>
-        see <a href="projects/steelhead_salmon_migration_code.html">code</a> behind
+      <p>see <a href="projects/steelhead_salmon_migration_code.html">code</a> behind
       </p>
     </li>
-  <span class="badge">Time Series</span>
-
+  
+</div>
+<div class="column right">
 <h4>Milan Kundera</h4>
   <a href="projects/text_mining_on_the_unbearable.html">
     <img alt="" src="projects/image/unbearable.jpg" height="400">
   </a>
   <br><br>
-    <li>
-      <p>
-        see the <a href="projects/text_mining_on_the_unbearable_code.html">code</a> behind
-      </p>
-    </li>
   <span class="badge" >Text mining</span>
+  <br><br>
+  <li><p>see <a href="projects/text_mining_on_the_unbearable_code.html">code</a> behind</p></li>
+  
+</div>
 </div>
 
 
 <br>
 
 
-<div class="col2">
+<div class="row">
+<div class="column left">
 <h4>Green Footprint</h4>
   <a href="https://ruoyuwang.shinyapps.io/GreenFootprint/">
     <img alt="" src="projects/image/green_fp.png" height="350" >
   </a>
   <br><br>
-    <li>
-      <p>
-        see the <a href="https://devpost.com/software/greentrack-ss-rw">story</a> and <a href="https://github.com/Ruoyu-Wang108/greentrack-ss-rw">GitHub Repo</a>
-      </p>
-    </li>
   <span class="badge" >Shinyapp</span>
   <br><br>
-
+    <li>
+    <p>see the <a href="https://devpost.com/software/greentrack-ss-rw">story</a> and <a href="https://github.com/Ruoyu-Wang108/greentrack-ss-rw">GitHub Repo</a>
+    </p>
+    </li>
+</div> 
+<div class="column right">
 <h4>AnimalDex</h4>
-<br>
    <img alt="" src="projects/image/coming_soon.png" height="350">   
-  
-  *Made with [logoMakr](https://logomakr.com).*
-  
+<br>
   <span class="badge" >Shinyapp</span>
+</div>
 </div>
 
 <br>

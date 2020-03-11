@@ -3,15 +3,25 @@ output: html_document
 ---
 
 <style>
-  .col2 {
-    columns: 2 200px;         /* number of columns and width in pixels*/
-    -webkit-columns: 2 200px; /* chrome, safari */
-    -moz-columns: 2 200px;    /* firefox */
+.column {
+  float: left;
+  padding: 10px;
+}
 
-  }
-  .button{
-  background:"white"
-  }
+.left {
+  width: 50%;
+}
+
+.right {
+  width: 50%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 </style>
 
 <br><br><br>
@@ -25,44 +35,37 @@ output: html_document
 <br><br><br>
 
 
-<div class="col2">
-<h4>Sea level rise in Santa Barbara, CA</h4>
-<a href="projects/gis/sb_sea_level_rise.pdf">
+<div class="row">
+  <div class="column left">
+  <h4>Sea level rise in Santa Barbara, CA</h4>
+  <a href="projects/gis/sb_sea_level_rise.pdf">
     <img alt="" src="projects/gis/image/sb_sea_level_rise.png" width="390">
-</a>
-
-<span class="badge" >ArcMap</span>
-<br>
-
-<li>
-  <p>
-   This project was part of the curriculum of <a href="https://frew.eri.ucsb.edu/private/ESM263/">ESM 263</a>
+  </a>
+  <br><br>
+  <span class="badge" >ArcMap</span>
+  <br><br>
+  <li>
+  <p>This project was part of the curriculum of <a href="https://frew.eri.ucsb.edu/private/ESM263/">ESM 263</a>
   </p>
-</li>
-
-<br><br>
-
-<h4>Potential wind turbine sites in Santa Barbara, CA</h4>
-<a href="projects/gis/sb_wind_turbines_site.pdf">
+  </li>
+  </div>
+  <div class="column right">
+  <h4>Potential wind turbine sites in Santa Barbara, CA</h4>
+  <a href="projects/gis/sb_wind_turbines_site.pdf">
     <img alt="" src="projects/gis/image/sb_wind_turbines_site.png" width="390">
-</a>
-<br><br>
-<span class="badge" >ArcMap</span>
-<br>
-
-<li>
-  <p>
-   This project was part of the curriculum of <a href="https://frew.eri.ucsb.edu/private/ESM263/">ESM 263</a>. 
+  </a>
+  <br><br>
+  <span class="badge" >ArcMap</span>
+  <br><br>
+  <li>
+  <p>This project was part of the curriculum of <a href="https://frew.eri.ucsb.edu/private/ESM263/">ESM 263</a>. 
   </p>
-</li>
-
-<li>
-  <p>
-   See the <a href="projects/gis/sb_wind_turbines_site.tbx">model</a> for this project
+  </li>
+  <li>
+  <p>See the <a href="projects/gis/sb_wind_turbines_site.tbx">model</a> for this project
   </p>
-</li>
-
-
+  </li>
+  </div>
 </div>
 
 

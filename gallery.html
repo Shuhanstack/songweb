@@ -314,11 +314,25 @@ $(document).ready(function () {
 
 
 <style>
-  .col2 {
-    columns: 2 200px;         /* number of columns and width in pixels*/
-    -webkit-columns: 2 200px; /* chrome, safari */
-    -moz-columns: 2 200px;    /* firefox */
-  }
+.column {
+  float: left;
+  padding: 10px;
+}
+
+.left {
+  width: 50%;
+}
+
+.right {
+  width: 50%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 </style>
 <p><br><br><br></p>
 <center>
@@ -327,40 +341,44 @@ Gallery  
 </h2>
 </center>
 <p><br><br><br></p>
-<div class="col2">
+<div class="row">
+<div class="column left">
 <h4>
 Wetland
 </h4>
-<img src="gallery/Wetland/1.pic_hd.jpg" width="400" /> <br><br>
+<img src="gallery/Wetland/1.pic_hd.jpg" width="400" /> <br><br> <span class="badge">tapestry</span> <br><br>
 <li>
 <p>
 What to take a closer look? <a href="gallery/tap_wetland.html">Yes</a>!
 </p>
 </li>
-<p><span class="badge">tapestry</span> <br><br></p>
+</div>
+<div class="column right">
 <h4>
 Flower Sea
 </h4>
-<img src="gallery/Flower_Sea/cover.jpeg" width="400" /> <br><br>
+<img src="gallery/Flower_Sea/cover.jpeg" width="400" /> <br><br> <span class="badge">tapestry</span> <br><br>
 <li>
 <p>
 <a href="gallery/tap_flower_sea.html">Here</a> are the details! Why not take a look?
 </p>
 </li>
-<p><span class="badge">tapestry</span></p>
+</div>
 </div>
 <p><br></p>
-<div class="col2">
+<div class="row">
+<div class="column left">
 <h4>
 Bird of Paradise Flower <small class="text-muted">(<em>Strelitzia reginae</em>)</small>
 </h4>
 <p><img src="gallery/BirdOfParadise.jpg" width="400" /></p>
-<p><br> <br><br></p>
+</div>
+<div row="column right">
 <h4>
 Cortez Rainbow Wrasser <small class="text-muted">(<em>Thalassoma lucasanum</em>)</small>
 </h4>
-<p><br><br><br><br><br><br><br> <img src="gallery/CortezRainbowWrasse.jpg" width="400" /></p>
-<p><br><br><br><br></p>
+<p><br><br><br><br><br><br> <img src="gallery/CortezRainbowWrasse.jpg" width="400" /></p>
+</div>
 </div>
 <p><br><br><br></p>
 <div id="footer" align="center">
