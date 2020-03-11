@@ -30,4 +30,3 @@ knitr::opts_chunk$set(echo = TRUE)
 <br>
 <br>
 
-<h4>**Email**</h4> <p>shuhan@bren.ucsb.edu</p>
