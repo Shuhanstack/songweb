@@ -46,7 +46,7 @@ knitr::opts_chunk$set(echo = FALSE)
   </a>
   <br><br>
     <p>see <a href="projects/map_hawaii_code.html">code</a> behind</p>
-  <span class="badge" >map</span>
+  <span class="badge" >Map</span>
   
 </div>
 <div class="column right">
@@ -57,7 +57,7 @@ knitr::opts_chunk$set(echo = FALSE)
   <br><br>
     <p>see <a href="projects/sb_creek_code.html">code</a> behind
     </p>
-  <span class="badge" >mlr</span> <span class="badge" >pca</span> <span class="badge" >clustering</span>
+  <span class="badge" >MLR</span> <span class="badge" >PCA</span> <span class="badge" >Clustering</span>
 </div>
 </div>
 
