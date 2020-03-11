@@ -25,12 +25,17 @@ knitr::opts_chunk$set(echo = TRUE)
   clear: both;
 }
 
-.tab {position:absolute;left:150px; 
-}
-
 </style>
 
-<br> 
+<br><br><br>
+
+<center>
+
+<h2>About me&emsp;</h2>
+
+</center>
+
+<br><br><br>
 
 ![](image/intro.JPG)
 

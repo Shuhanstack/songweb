@@ -1,25 +1,80 @@
 ---
 output: html_document
 ---
+<style>
+.column {
+  float: left;
+  padding: 10px;
+}
+
+.left {
+  width: 30%;
+}
+
+.right {
+  width: 70%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+</style>
+
+
+<br><br><br>
+
+<center>
+
+<h2>Paper&emsp;&emsp;</h2>
+
+</center>
+
+<br><br><br>
+
+<div class=""row>
+  <div class="column left" align="center">
+  <h2>Term paper</h2>
+  </div>
+  <div class="column right">
+  <a href="projects/paper/International_climate_agreements.pdf"><h4>**Why international climate agreements are more likely to fail?**</h4></a>
+  <p>Trump’s administration announced the decision of withdrawal from the 2015 Paris Agreement on June 1st, 2017. As of January 2020, Iran and Turkey still have not ratified the Paris Agreement after about four years. International climate agreements have been hard to comply since the first craft of climate treaty. Related to climate agreements, carbon emission is the major criteria for the effectiveness of climate agreements while energy is a global topic that contributed to but avoided with climate change. International climate agreements have much more complicated discussions and implementation issues than other international agreements in the UN, among different states, and in each state. <i>To understand why international climate agreements are more likely to fail, I analyzed 1) the special characteristic of carbon emission that lead to a lack of legal binding and global leadership, 2) the weaknesses of UN’s institutionalization and conflicts among states that prevent global collaborations on energy shift and security, and 3) the coalitions of industries and politicians in states that shape the implementation of renewable energy.</i></p>
+  
+<br>
+
+  <a href="projects/paper/Methanogenesis.pdf"><h4>**Methanogenesis and Methane Emission**</h4></a>
+  <p>Methanogenesis happens in both natural and anthropogenic environments, from wetland to landfill, to ricefield and livestock production. Methanogenesis involves a series of microrganisms to complete the process. Methanogen is the most important population which use either organic low-weight carbon com- pounds or inorganic carbon molecule (CO2) as electron acceptor to produce methane. Methanogenesis has specialized environmental requirements to perform, from temperature to pH and alkalinity, to soil type and the availability of organic carbon. Though a large portion of methane produced by methanogenesis is removed by methanotrophs in the soil, the strong greenhouse gas effect, and increased anthropogenic emission of methane an important component in global climate and carbon cycle. Therefore, understand- ing methanogenesis will improve our knowledge in the process of methane production.</p>
+  </div>
+</div>
 
 <br>
-<br>
 
-## Term paper
+<div class=""row>
+  <div class="column left" align="center">
+  <h2>Senior Thesis</h2>
+  </div>
+  <div class="column right">
+  <a href="projects/paper/amphibian_thesis.pdf"><h4>**Impact of Climate and Snowpack on the Distribution of Amphibian Species in Sierra Nevada**</h4></a>
+  <p>Amphibian biodiversity decline is a severe global problem. With 22 out of 69 species at conservation risks, climate change is a key environmental factor for the decline in California. Snowpack is closely related to the life history of amphibians but its impact on species range remains unknown. To model current and future species distribution of amphibians in Sierra Nevada (SN) using Maxent, I assembled species occurrence data of 10 species from the Museum of Vertebrate Zoology, bioclimatic data from WorldClim, and snowpack data from CalAdapt. I evaluated the model performance and projected future species range in 2050 and 2070 under the climate change scenarios of RCP4.5 and RCP8.5. Overall, the model fitted strongly for 8 species and computed high model contributions from average snow water equivalence, precipitation seasonality, mean diurnal temperature range, and annual precipitation. Projections gave 1 species maintaining, 2 species expanding, and 7 species losing their ranges, including 2 species shrunk inconsistently under the four future scenarios. Comparing the two climate change scenarios with different limiting novel predictors and values, amphibians in general lost larger suitable habitat range under RCP8.5. Specifically, <i>Hydromantes platycephalus</i> would bear the highest risk of extinction even under RCP4.5 in 2050 so that requires immediate conservation and research attention. <i>I concluded snowpack as an important environmental predictor in future studies of amphibian distribution, high-elevation endemic species and species of Plethodontidae as the most susceptible groups to climate change, and RCP4.5 being more bearable than RCP8.5 for amphibians in SN.</i></p>
+  <ul>
+    <li>
+    <p>
+    See <a href="projects/paper/amphibian_poster.pdf">poster</a>
+    </p>
+    </li>
+    <li>
+    <p>
+    See <a href="projects/paper/amphibian_ppt.pdf">presentation</a>
+    </p>
+    </li>
+  </ul>
+  </div>
+</div>
 
-[Why international climate agreements are more likely to fail?](projects/paper/International_climate_agreements.pdf)
 
-[Methanogenesis and Methane Emission](projects/paper//Methanogenesis.pdf)
 
-<br>
-
-## Senior Thesis
-
-[Impact of Climate and Snowpack on the Distribution of Amphibian Species in Sierra Nevada](projects/paper/amphibian_thesis.pdf)
-
-- see [poster](projects/paper/amphibian_poster.pdf)
-
-- see [presentation](projects/paper/amphibian_ppt.pdf)
 
 <br><br><br><br><br><br><br>      <br><br><br><br><br><br><br>    <br><br><br><br><br><br><br> 
 

@@ -2,10 +2,6 @@
 output: html_document
 ---
 
-<br>
-<br>
-
-
 <style>
   .col2 {
     columns: 2 200px;         /* number of columns and width in pixels*/
@@ -18,11 +14,19 @@ output: html_document
   }
 </style>
 
-<br>
+<br><br><br>
+
+<center>
+
+<h2>GIS&emsp;&emsp;&emsp;</h2>
+
+</center>
+
+<br><br><br>
 
 
 <div class="col2">
-<h4>**Sea level rise in Santa Barbara, CA**</h4>
+<h4>Sea level rise in Santa Barbara, CA</h4>
 <a href="projects/gis/sb_sea_level_rise.pdf">
     <img alt="" src="projects/gis/image/sb_sea_level_rise.png" width="390">
 </a>
@@ -30,11 +34,15 @@ output: html_document
 <span class="badge" >ArcMap</span>
 <br>
 
-- This project was part of the curriculum of [ESM 263](https://frew.eri.ucsb.edu/private/ESM263/) in MESM program at Bren School of Environmental Science & Management. 
+<li>
+  <p>
+   This project was part of the curriculum of <a href="https://frew.eri.ucsb.edu/private/ESM263/">ESM 263</a>
+  </p>
+</li>
 
 <br><br>
 
-<h4>**Potential wind turbine sites in Santa Barbara, CA**</h4>
+<h4>Potential wind turbine sites in Santa Barbara, CA</h4>
 <a href="projects/gis/sb_wind_turbines_site.pdf">
     <img alt="" src="projects/gis/image/sb_wind_turbines_site.png" width="390">
 </a>
@@ -42,11 +50,17 @@ output: html_document
 <span class="badge" >ArcMap</span>
 <br>
 
-- This project was part of the curriculum of [ESM 263](https://frew.eri.ucsb.edu/private/ESM263/) in MESM program at Bren School of Environmental Science & Management. 
+<li>
+  <p>
+   This project was part of the curriculum of <a href="https://frew.eri.ucsb.edu/private/ESM263/">ESM 263</a>. 
+  </p>
+</li>
 
-- See the [model](projects/gis/sb_wind_turbines_site.tbx) for this project
-
-
+<li>
+  <p>
+   See the <a href="projects/gis/sb_wind_turbines_site.tbx">model</a> for this project
+  </p>
+</li>
 
 
 </div>

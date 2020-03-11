@@ -2,10 +2,6 @@
 output: html_document
 ---
 
-<br>
-<br>
-
-
 <style>
   .col2 {
     columns: 2 200px;         /* number of columns and width in pixels*/
@@ -13,32 +9,37 @@ output: html_document
     -moz-columns: 2 200px;    /* firefox */
   }
 </style>
-<br> 
+
+<br><br><br>
+
+<center>
+
+<h2>Gallery&emsp;&emsp;</h2>
+
+</center>
+
+<br><br><br>
 
 <div class="col2">
-<h4>**Wetland**</h4>
+<h4>Wetland</h4>
 ![](gallery/Wetland/1.pic_hd.jpg){width=400}
 <br><br>
-<ul>
   <li>
   <p>
   What to take a closer look? <a href="gallery/tap_wetland.html">Yes</a>!
   </p>
   </li>
-</ul>
 <span class="badge" >tapestry</span>
 <br><br>
 
-<h4>**Flower Sea**</h4>
+<h4>Flower Sea</h4>
 ![](gallery/Flower_Sea/cover.jpeg){width=400}
 <br><br>
-<ul>
   <li>
   <p>
   <a href="gallery/tap_flower_sea.html">Here</a> are the details! Why not take a look?
   </p>
   </li>
-</ul>
 <span class="badge" >tapestry</span>
 
 </div>
@@ -48,7 +49,7 @@ output: html_document
 
  
 <div class="col2">
-<h4>**Bird of Paradise Flower**
+<h4>Bird of Paradise Flower
   <small class="text-muted">(_Strelitzia reginae_)</small>
 </h4>
 
@@ -57,7 +58,7 @@ output: html_document
 <br>
 <br><br>
 
-<h4>**Cortez Rainbow Wrasser**
+<h4>Cortez Rainbow Wrasser
   <small class="text-muted">(*Thalassoma lucasanum*)</small>
 </h4>
 <br><br><br><br><br><br><br>
