@@ -73,10 +73,9 @@ output: html_document
   </div>
 </div>
 
-
-
-
-<br><br><br><br><br><br><br>      <br><br><br><br><br><br><br>    <br><br><br><br><br><br><br> 
+<br>
+<br>
+<br>
 
 
 <div  align="center" id="footer">
