@@ -44,10 +44,12 @@ output: html_document
   <br><br>
   <span class="badge" >ArcMap</span>
   <br><br>
+  <ul>
   <li>
   <p>This project was part of the curriculum of <a href="https://frew.eri.ucsb.edu/private/ESM263/">ESM 263</a>
   </p>
   </li>
+  </ul>
   </div>
   <div class="column right">
   <h4>Potential wind turbine sites in Santa Barbara, CA</h4>
@@ -57,6 +59,7 @@ output: html_document
   <br><br>
   <span class="badge" >ArcMap</span>
   <br><br>
+  <ul>
   <li>
   <p>This project was part of the curriculum of <a href="https://frew.eri.ucsb.edu/private/ESM263/">ESM 263</a>. 
   </p>
@@ -65,6 +68,8 @@ output: html_document
   <p>See the <a href="projects/gis/sb_wind_turbines_site.tbx">model</a> for this project
   </p>
   </li>
+  </ul>
+  
   </div>
 </div>
 
