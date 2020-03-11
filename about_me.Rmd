@@ -193,6 +193,17 @@ knitr::opts_chunk$set(echo = TRUE)
   </div>
 </div>
 
+
+<div class=""row>
+  <div class="column left" align="center">
+  <h2>Contact me</h2>
+  </div>
+  <div class="column right">
+  <h4>**Email**</h4> 
+  <p>shuhan@bren.ucsb.edu</p>
+  </div>
+</div>
+
 <br><br><br>
 
 <div  align="center" id="footer">

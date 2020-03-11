@@ -12,6 +12,15 @@ navbar:
     href: gallery.html
   - text: "About me"
     href: about_me.html
+  right:
+  - text: "LinkedIn"
+    href: https://www.linkedin.com/in/shuhan-song-nature/ 
+  - text: "GitHub"
+    href: https://github.com/Shuhanstack
+  - text: "Twitter"
+    href: https://twitter.com/song_shuhan
+  - text: "Etsy"
+    href: https://www.etsy.com/shop/waveryweave
 output_dir: "."
 output:
   html_document:
