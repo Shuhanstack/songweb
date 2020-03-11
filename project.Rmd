@@ -18,41 +18,34 @@ knitr::opts_chunk$set(echo = FALSE)
   }
 </style>
 
-<br>
-
+<br><br><br>
 
 
 <div class="col2">
-
-<h4>**Steelhead passage across the Bonneville Dam**</h4>
-  <a href="projects/steelhead_salmon_migration.html">
-    <img alt="" src="projects/image/steelhead.jpeg" height="400">
+<h4>**Agriculture and watersheds in Hawaii**</h4>
+  <a href="projects/map_hawaii.html">
+    <img alt="" src="projects/image/Hawaiian_Islands_Map.jpg" width="350" height="220">
   </a>
   <br><br>
-  <ul>
     <li>
       <p>
-        see <a href="projects/steelhead_salmon_migration_code.html">code</a> behind
+        see <a href="projects/map_hawaii_code.html">code</a> behind
       </p>
     </li>
-  </ul>
-  <span class="badge">Time Series</span>
-
-<h4>**Milan Kundera**</h4>
-  <a href="projects/text_mining_on_the_unbearable.html">
-    <img alt="" src="projects/image/unbearable.jpg" height="400">
+  <span class="badge" >map</span>
+  
+<h4>**Santa Barbara Creek Chemistry**</h4>
+<a href="projects/sb_creek.html">
+    <img alt="" src="projects/image/sb_creek.png" width="350" height="220">
   </a>
   <br><br>
-  <ul>
     <li>
       <p>
-        see the <a href="projects/text_mining_on_the_unbearable_code.html">code</a> behind</a>
+        see <a href="projects/sb_creek_code.html">code</a> behind
       </p>
     </li>
-  </ul>
-  <span class="badge" >Text mining</span>
+  <span class="badge" >mlr</span> <span class="badge" >pca</span> <span class="badge" >clustering</span>
 </div>
-
 
 <br>
 
@@ -78,18 +71,47 @@ knitr::opts_chunk$set(echo = FALSE)
 <br>
 
 <div class="col2">
+
+<h4>**Steelhead passing the Bonneville Dam**</h4>
+  <a href="projects/steelhead_salmon_migration.html">
+    <img alt="" src="projects/image/steelhead.jpeg" height="400">
+  </a>
+  <br><br>
+    <li>
+      <p>
+        see <a href="projects/steelhead_salmon_migration_code.html">code</a> behind
+      </p>
+    </li>
+  <span class="badge">Time Series</span>
+
+<h4>**Milan Kundera**</h4>
+  <a href="projects/text_mining_on_the_unbearable.html">
+    <img alt="" src="projects/image/unbearable.jpg" height="400">
+  </a>
+  <br><br>
+    <li>
+      <p>
+        see the <a href="projects/text_mining_on_the_unbearable_code.html">code</a> behind
+      </p>
+    </li>
+  <span class="badge" >Text mining</span>
+</div>
+
+
+<br>
+
+
+<div class="col2">
 <h4>**Green Footprint**</h4>
   <a href="https://ruoyuwang.shinyapps.io/GreenFootprint/">
     <img alt="" src="projects/image/green_fp.png" height="350" >
   </a>
   <br><br>
-  <ul>
     <li>
       <p>
         see the <a href="https://devpost.com/software/greentrack-ss-rw">story</a> and <a href="https://github.com/Ruoyu-Wang108/greentrack-ss-rw">GitHub Repo</a>
       </p>
     </li>
-  </ul>
   <span class="badge" >Shinyapp</span>
   <br><br>
 
@@ -104,28 +126,11 @@ knitr::opts_chunk$set(echo = FALSE)
 
 <br>
 
-<div class="col2">
-<h4>**Agricultural land use and watersheds in Hawaii**</h4>
-  <a href="projects/map_hawaii.html">
-    <img alt="" src="projects/image/Hawaiian_Islands_Map.jpg" height="350">
-  </a>
-  <br><br>
-  <ul>
-    <li>
-      <p>
-        see <a href="projects/map_hawaii_code.html">code</a> behind
-      </p>
-    </li>
-  </ul>
-  <span class="badge" >map</span>
-  
-<h4></h4>
-<br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-</div>
 
-<br><br><br>
+
+<br><br>
+
+
 <div  align="center" id="footer">
   <button type="button" class="btn btn-primary disabled">
     <a href="index.html" style="color:white">Home</a>

@@ -1,0 +1,191 @@
+---
+title: "Santa Barbara Creek Chemistry"
+author: "Shuhan Song"
+date: "3/9/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F,
+                      message = F,
+                      warning = F)
+```
+
+## Introduction
+
+Chemical composition determines the pollution level, salinity, and viability for fish in a watershed. Nitrogen and phosphorus, widely used in fertilizer, are two main nutrient inputs into the hydrological biogeochemical cycle, which can lead to eutrophication and dying of fish. In addition, chemical compositions are different among watersheds due to the different sources. Watersheds close to agricultural areas tend to have higher nitrogen and phosphorus level than urban and undisturbed areas (Goodridge and Melack 2012). Therefore, monitoring the stream water chemistry is important for understanding the chemical composition and improving the water quality of creeks and ocean in Santa Barbara area.
+
+![](image/sb_creek.png){width=60%}
+
+_Image downloaded from [EDI Data Portal](https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-sbc&identifier=6&revision=newest)_
+
+
+
+Below, I used the stream chemistry data (Santa Barbara Coastal LTER and J. Melack. 2019) to look at the water conductivity, chemical composition, and the variation among sites in the Santa Barbara Coastal drainage area. I used multiple linear regression to model the relationship between water conductivity, chemical compostion, and sites. I ran principle component analysis (PCA) to see the correlation between variables. I looked at the similarity of chemical composition among sites using agglomerative (complete linkage) and divisive hierarchical clustering.
+
+## Data analysis
+
+```{r}
+# attach packages
+library(tidyverse)
+library(cluster)
+library(dendextend)
+library(corrplot)
+library(stargazer)
+library(ggfortify)
+library(here)
+
+# read in data
+creek_chem <- read_csv(here("data", "sbc_lter_registered_stream_chemistry.csv"), na = "-999")
+```
+
+```{r, eval=FALSE}
+skimr::skim(creek_chem)
+```
+
+```{r}
+creek_clean <- creek_chem %>% 
+  select(-tpp_uM, -tss_mgperLiter, -tpc_uM, -tpn_uM) %>% 
+  drop_na() 
+```
+
+
+### Multiple Linear Regression
+
+```{r}
+# look at correlations between the numeric variables
+
+creek_clean_cor <- cor(creek_clean[3:8])
+
+corrplot(creek_clean_cor,
+         method = "circle",
+         type = "upper")
+```
+
+_**Figure 1: Correlation matrix of the numeric variables**. Stronger correlation between the couple of variables are represented with larger circle in deeper color. Data source: Santa Barbara Coastal LTER and J. Melack, 2019._
+
+There is very strong correlation (cor = `r creek_clean_cor[2, 4]`) between NO3 concentration (no3_uM) and total dissolved nitrogen (tdn_uM) and moderate correlation (cor = `r creek_clean_cor[3, 5]`) between PO4 concentration (po4_uM) and total dissolved phosphorus (tdp_uM) (Figure 1). Total dissolved nitrogen is measured as the sum of dissolved organic nitrogen + nitrite + nitrate + ammonium. NO3 concentration is the sum of nitrite and nitrate. The strong correlation between NO3 concentration and total dissolved nitrogen means the fluctuations of total dissolved nitrogen concentration is mainly caused by the fluctuations of NO3 concentration. In other words, the changes in the concentration of total dissolved nitrogen can be very well represented by the changes in NO3 concentration. 
+
+```{r}
+# mlr with interactive effect between NO3 concentration (no3_uM) and total dissolved nitrogen (tdn_uM)
+
+creek_lm_inter <- lm(spec_cond_uSpercm ~ site_code + nh4_uM + no3_uM + po4_uM + tdn_uM + tdp_uM + tdn_uM*no3_uM, data = creek_clean)
+
+# mlr without tdn_uM
+
+creek_lm <- lm(spec_cond_uSpercm ~ site_code + nh4_uM + no3_uM + po4_uM + tdp_uM, data = creek_clean)
+```
+
+```{r, results='asis'}
+stargazer(creek_lm, creek_lm_inter, 
+          type = "html",
+          title = "Table 1: Summary of regression output", 
+          column.labels = c("Partial model", "Full model"),
+          covariate.labels = c("Site AT07", "Site BC02", "Site DV01", "Site GV01", "Site HO00", "Site MC00", "Site MC06", "Site ON02", "Site RG01", "Site RS02", "Site SP02", "Site TO02", "NH4 concentration (uM)", "NO3 concentration (uM)", "PO4 concentration (uM)", "Total dissolved nitrogen (uM)", "Total dissolved phosphate (uM)", "Interaction between NO3 and total dissolved nitrogen")
+          )
+```
+_Data source: Santa Barbara Coastal LTER and J. Melack, 2019._
+
+<br>
+The summary of regression outputs shows that water specific conductivity varies among the different sites. The average value in site DV01, AT07, RG01, and GV01 are higher than in site AB00, while site BC02, TO02, HO00, SP02, MC06, MC00, ON02, and RS02 are lower than site AB00. One unit increase of PO4 concentration will decrease specific conductivity by `r round(abs((creek_lm_inter$coefficients[[16]] + creek_lm$coefficients[[16]])/2), 2)` uS/cm on average. One unit increase of total dissolved phosphate will decrease specific conductivity by about `r round(abs((creek_lm_inter$coefficients[[18]] + creek_lm$coefficients[[17]])/2), 2)` uS/cm on average. 
+
+Based on the partial model, when taking off the effect of total dissolved nitrogen, one unit increase of NH4 concentration will increase specific conductivity by `r round(abs(creek_lm$coefficients[[14]]), 2)` uS/cm on average while one unit increase of NO3 concentration will increase specific conductivity only by `r round(abs(creek_lm$coefficients[[15]]), 2)` uS/cm on average. Looking at the full model, if total dissolved nitrogen is 1 uM, the water specific conductivity will change by (`r round(creek_lm_inter$coefficients[[15]], 2)` + `r round(creek_lm_inter$coefficients[[19]], 2)`) for each unit increase in NO3 concentration. If NO3 concentration is 1 uM, the water conductivity will increase by by (`r round(creek_lm_inter$coefficients[[17]], 2)` + `r round(creek_lm_inter$coefficients[[19]], 2)`) for each unit increase in total dissolved nitrogen concentration. The full model implies that the NO3 does not increase water conductivity but NH4 and organic nitrogen do. 
+
+### PCA
+
+```{r}
+creek_num_var <- creek_clean %>% 
+  select(-timestamp_local)
+
+# pca on numeric variables
+creek_pca <- prcomp(creek_num_var[, -1], scale = TRUE)
+
+sum_creek_pca <- summary(creek_pca)
+
+# create biplot
+autoplot(creek_pca, 
+         alpha = 0.1,
+         loadings.label.size = 3,
+         loadings.label.colour = "black",
+         loadings.label = TRUE,
+         loadings.label.repel = TRUE) +
+  theme_bw()
+```
+
+_**Figure 2: PCA biplot**. The first and second PCs explained `r round(sum_creek_pca$importance[3, 2]*100, 2)`% of the total variance. Observations are plotted as black circles on the figure. Data source: Santa Barbara Coastal LTER and J. Melack, 2019._
+
+```{r}
+# assign color to each site
+color <- rainbow(13, s = 1, v = 0.8, alpha = 0.5)
+pca_color <- color[as.factor(creek_num_var$site_code)]
+
+# plot site based on pc1 and pc2 with colored text
+plot(creek_pca$x[, 1:2], cex = 0, xlim = c(-17, 3), ylim = c(-14, 14))
+text(creek_pca$x[, 1:2], labels = creek_num_var$site_code, col = alpha(pca_color, 0.5), cex = 0.7)
+legend(-18, 15, legend = c("Site AB00", "Site AT07", "Site BC02", "Site DV01", "Site GV01", "Site HO00", "Site MC00", "Site MC06", "Site ON02", "Site RG01", "Site RS02", "Site SP02", "Site TO02"), col = c("#CC000080", "#CC5E0080", "#CCBC0080", "#7ECC0080", "#1FCC0080", "#00CC3F80", "#00CC9D80", "#009DCC80", "#003FCC80", "#1F00CC80", "#7E00CC80", "#CC00BC80", "#CC005E80"), cex = 0.6, lty = 1)
+```
+
+_**Figure 3: Observation in relation to site on biplot**. Observations on different sites are labeled and colored differently. There is clear clustering of observations based on site. Data source: Santa Barbara Coastal LTER and J. Melack, 2019._
+
+Based on Figure 2, PO4 concentration and total dissolved phosphate are highly postively related, which is also true for NO3 and total dissolved nitrogen. NO3 and total dissolved nitrogen are most postively related to specific condunctivity, whereas phosphate group has little correlation with water conductivity. Comparing Figure 3 to Figure 2, site BC02 and RG01 have higher NO3 and total dissolved nitrogen concentration than other measurements; site GV01 and AB00 are high in phosphorus; site MC00 and ON02 are high in NH4 concentration. 
+
+### Hierarchical Clustering
+
+```{r}
+# summarize the average by site
+creek_site <- creek_clean %>% 
+  group_by(site_code) %>% 
+  summarize(nh4_uM = mean(nh4_uM),
+            no3_uM = mean(no3_uM),
+            po4_uM = mean(po4_uM),
+            tdn_uM = mean(tdn_uM),
+            tdp_uM = mean(tdp_uM),
+            spec_cond_uSpercm = mean(spec_cond_uSpercm))
+
+# scale it
+creek_site_scale <- as.data.frame(scale(creek_site[2:7]))
+
+# add rowname
+rownames(creek_site_scale) <- creek_site$site_code
+
+# compute dissimilarity values
+creek_diss <- dist(creek_site_scale, method = "euclidean")
+
+# hierarchical clustering with complete linkage (agglomerative)
+creek_hc_complete <- hclust(creek_diss, method = "complete")
+```
+
+```{r}
+# divisive clustering (the top-down approach)
+creek_hc_div <- diana(creek_diss)
+```
+
+```{r}
+# compare the results of complete linkage with divisive clustering 
+
+dend1 <- as.dendrogram(creek_hc_complete)
+dend2 <- as.dendrogram(creek_hc_div)
+
+creek_dend <- dendlist(dend1, dend2)
+
+
+tanglegram(dend1, dend2)
+```
+
+_**Figure 4: Tanglegram with complete linkage (left) and divisive method (right)**. Sites that are clustered in the same level within the same group are connected with colored lines where different groups have different colors. Data source: Santa Barbara Coastal LTER and J. Melack, 2019._
+
+Comparing complete linkage and divisive clustering (Figure 4), SP02 and MC06 (green lines) are clustered in the same way in both bottom-up and top-down approaches, implying the chemical compositions measured in the two sites are closer to each other than the rest sites. The same conclusion can be drawn to site TO02, HO00, RS02, RG01, ON02 (deep-pink lines) where HO00 and RS02, RG01 and ON02 have very similar chemical compositions. In addition, the level of clustering for the five fites are the same for both clustering methods. Last but not least, site DV01 and BC02 have very different chemistry compared to the rest of the sites. 
+
+## Summary
+
+- The NO3 is the main species of total dissolved nitrogen in the sites sampled. PO4 is the main species of total dissolved phosphorus (Figure 1 and 2). 
+
+- Total dissolved nitrogen has stronger contribution to the specific water conductivity than total dissolved phosphorus (Figure 2). 
+
+- The chemical compositions in Santa Barbara Creek vary among different sites (Figure 3). Site SP02 and MC06 are closely related to each other while site HO00, RS02, RG01 and ON02 are similar (Figure 4). Site BC02 has high NO3 concentration (Figure 2 and 3), which differs the site from the other ones (Figure 4). 
+
+## Reference
+
+Goodridge, B. M., and J. M. Melack. 2012. Land use control of stream nitrate concentrations in mountainous coastal California watersheds. Journal of Geophysical Research: Biogeosciences 117.
+
+Santa Barbara Coastal LTER and J. Melack. 2019. SBC LTER: Land: Stream chemistry in the Santa Barbara Coastal drainage area, ongoing since 2000 ver 16. Environmental Data Initiative. https://doi.org/10.6073/pasta/67a558a24ceed9a0a5bf5e46ab841174.
