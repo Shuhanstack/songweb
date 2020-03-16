@@ -36,7 +36,7 @@ library(ggfortify)
 library(here)
 
 # read in data
-creek_chem <- read_csv(here("data", "sbc_lter_registered_stream_chemistry.csv"), na = "-999")
+creek_chem <- read_csv(here("data", "sbc_lter_registered_stream_chemistry.csv"), na = c("-999", "-999.0"))
 ```
 
 ```{r, eval=FALSE}
@@ -57,9 +57,17 @@ creek_clean <- creek_chem %>%
 
 creek_clean_cor <- cor(creek_clean[3:8])
 
+# change label for variable names so that it is more readable
+colnames(creek_clean_cor) <- c("NH4", "NO3", "PO4", "TDN", "TDP", "SWC")
+rownames(creek_clean_cor) <- c("NH4", "NO3", "PO4", "Total dissolved nitrogen (TDN)", "Total dissolved phosphorus (TDP)", "Specific water conductivity (SWC)")
+
 corrplot(creek_clean_cor,
          method = "circle",
-         type = "upper")
+         type = "upper",
+         tl.col = "black",
+         tl.srt = 0.001,
+         tl.offset = 1,
+         tl.cex = 0.8)
 ```
 
 _**Figure 1: Correlation matrix of the numeric variables**. Stronger correlation between the couple of variables are represented with larger circle in deeper color. Data source: Santa Barbara Coastal LTER and J. Melack, 2019._
@@ -95,7 +103,13 @@ Based on the partial model, when taking off the effect of total dissolved nitrog
 
 ```{r}
 creek_num_var <- creek_clean %>% 
-  select(-timestamp_local)
+  select(-timestamp_local) %>% 
+  rename(NH4 = nh4_uM,
+         NO3 = no3_uM,
+         PO4 = po4_uM,
+         "Total dissolved nitrogen" = tdn_uM,
+         "Total dissolved phosphorus" = tdp_uM,
+         "Specific water conductivity" = spec_cond_uSpercm)
 
 # pca on numeric variables
 creek_pca <- prcomp(creek_num_var[, -1], scale = TRUE)
@@ -103,12 +117,13 @@ creek_pca <- prcomp(creek_num_var[, -1], scale = TRUE)
 sum_creek_pca <- summary(creek_pca)
 
 # create biplot
-autoplot(creek_pca, 
+autoplot(creek_pca,
          alpha = 0.1,
          loadings.label.size = 3,
          loadings.label.colour = "black",
          loadings.label = TRUE,
          loadings.label.repel = TRUE) +
+  labs(colour = "Site") +
   theme_bw()
 ```
 
