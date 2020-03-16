@@ -47,23 +47,6 @@ output: html_document
   <span class="badge" >ArcMap</span>
   </div>
   <div class="column right">
-  <h4>Potential wind turbine sites in Santa Barbara, CA</h4>
-  <a href="projects/gis/sb_wind_turbines_site.pdf">
-    <img alt="" src="projects/gis/image/sb_wind_turbines_site.png" width="390">
-  </a>
-  <br><br>
-  <p>This project was part of the curriculum of <a href="https://frew.eri.ucsb.edu/private/ESM263/">ESM 263</a> 
-  </p>
-  <p>See the <a href="projects/gis/sb_wind_turbines_site.tbx">model</a> for this project
-  </p>
-  <span class="badge" >ArcMap</span>
-  
-  </div>
-</div>
-
-
-<div class="row">
-  <div class="column left">
   <h4>Watershed Conservation Priorities in Santa Barbara, CA</h4>
   <a href="projects/gis/sb_watersheds_conservation.png">
     <img alt="" src="projects/gis/image/sb_watersheds_conservation.png" width="390">
@@ -72,11 +55,30 @@ output: html_document
   <p>This project was part of the curriculum of <a href="https://frew.eri.ucsb.edu/private/ESM263/">ESM 263</a>
   </p>
   <span class="badge" >ArcMap</span> <span class="badge" >Multicriteria Analysis</span>
-  </div>
-  <div class="column right">
 
   </div>
 </div>
+
+
+<!-- <div class="row"> -->
+<!--   <div class="column left"> -->
+
+  <!-- <h4>Potential wind turbine sites in Santa Barbara, CA</h4> -->
+  <!-- <a href="projects/gis/sb_wind_turbines_site.pdf"> -->
+  <!--   <img alt="" src="projects/gis/image/sb_wind_turbines_site.png" width="390"> -->
+  <!-- </a> -->
+  <!-- <br><br> -->
+  <!-- <p>This project was part of the curriculum of <a href="https://frew.eri.ucsb.edu/private/ESM263/">ESM 263</a>  -->
+  <!-- </p> -->
+  <!-- <p>See the <a href="projects/gis/sb_wind_turbines_site.tbx">model</a> for this project -->
+  <!-- </p> -->
+  <!-- <span class="badge" >ArcMap</span> -->
+  
+<!--   </div> -->
+<!--   <div class="column right"> -->
+
+<!--   </div> -->
+<!-- </div> -->
 
 
    <br><br><br><br><br><br><br> 

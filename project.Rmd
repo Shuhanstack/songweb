@@ -65,26 +65,26 @@ knitr::opts_chunk$set(echo = FALSE)
 <br>
 
 
-<div class="row">
-<div class="column left">
-<h4>Snowshoe hares in Alaska</h4>
-  <a href="projects/snowshoe.html">
-    <img alt="" src="projects/image/snowshoe_cover.png" width="350">
-  </a>
-<br><br>
-<span class="badge" >Basic</span>
-</div>
-<div class="column right">
-<h4>Nutrients in vegan vs. non-vegan</h4>
-  <a href="projects/nutrient.html">
-    <img alt="" src="projects/image/food_cover.png" width="350">
-  </a>
-<br><br>
-<span class="badge" >PCA</span>
-</div>
-</div>
+<!-- <div class="row"> -->
+<!-- <div class="column left"> -->
+<!-- <h4>Snowshoe hares in Alaska</h4> -->
+<!--   <a href="projects/snowshoe.html"> -->
+<!--     <img alt="" src="projects/image/snowshoe_cover.png" width="350"> -->
+<!--   </a> -->
+<!-- <br><br> -->
+<!-- <span class="badge" >Basic</span> -->
+<!-- </div> -->
+<!-- <div class="column right"> -->
+<!-- <h4>Nutrients in vegan vs. non-vegan</h4> -->
+<!--   <a href="projects/nutrient.html"> -->
+<!--     <img alt="" src="projects/image/food_cover.png" width="350"> -->
+<!--   </a> -->
+<!-- <br><br> -->
+<!-- <span class="badge" >PCA</span> -->
+<!-- </div> -->
+<!-- </div> -->
 
-<br>
+<!-- <br> -->
 
 <div class="row">
 <div class="column left">
