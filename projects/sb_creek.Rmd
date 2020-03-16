@@ -54,7 +54,6 @@ creek_clean <- creek_chem %>%
 
 ```{r}
 # look at correlations between the numeric variables
-
 creek_clean_cor <- cor(creek_clean[3:8])
 
 # change label for variable names so that it is more readable
