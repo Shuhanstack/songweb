@@ -45,7 +45,7 @@ knitr::opts_chunk$set(echo = FALSE)
     <img alt="" src="projects/image/Hawaiian_Islands_Map.jpg" width="350" height="220">
   </a>
   <br><br>
-    <p>see <a href="projects/map_hawaii_code.html">code</a> behind</p>
+    <!-- <p>see <a href="projects/map_hawaii_code.html">code</a> behind</p> -->
   <span class="badge" >Map</span>
   
 </div>
@@ -55,8 +55,8 @@ knitr::opts_chunk$set(echo = FALSE)
     <img alt="" src="projects/image/sb_creek.png" width="350" height="220">
   </a>
   <br><br>
-    <p>see <a href="projects/sb_creek_code.html">code</a> behind
-    </p>
+    <!-- <p>see <a href="projects/sb_creek_code.html">code</a> behind -->
+    <!-- </p> -->
   <span class="badge" >MLR</span> <span class="badge" >PCA</span> <span class="badge" >Clustering</span>
 </div>
 </div>
@@ -93,8 +93,8 @@ knitr::opts_chunk$set(echo = FALSE)
     <img alt="" src="projects/image/steelhead.jpeg" height="400">
   </a>
   <br><br>
-  <p>see <a href="projects/steelhead_salmon_migration_code.html">code</a> behind
-  </p>
+  <!-- <p>see <a href="projects/steelhead_salmon_migration_code.html">code</a> behind -->
+  <!-- </p> -->
   <span class="badge">Time Series</span>
 
   
@@ -105,7 +105,7 @@ knitr::opts_chunk$set(echo = FALSE)
     <img alt="" src="projects/image/unbearable.jpg" height="400">
   </a>
   <br><br>
-  <p>see <a href="projects/text_mining_on_the_unbearable_code.html">code</a> behind</p>
+  <!-- <p>see <a href="projects/text_mining_on_the_unbearable_code.html">code</a> behind</p> -->
   <span class="badge" >Text mining</span>
   
 </div>
