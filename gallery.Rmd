@@ -71,6 +71,20 @@ output: html_document
 </div>
 </div>
 
+
+<br>
+
+<div class="row">
+<div class="column left">
+<h4>2020 Spring Break - Pismo Beach
+</h4>
+<iframe id="vp1WHEsC" title="Video Player" width="432" height="243" frameborder="0" src="https://s3.amazonaws.com/embed.animoto.com/play.html?w=swf/production/vp1&e=1585528769&f=WHEsCC7C6Gfc7bzeUGK1Yg&d=0&m=b&r=360p&volume=100&start_res=undefined&i=m&asset_domain=s3-p.animoto.com&animoto_domain=animoto.com&options=" allowfullscreen></iframe>
+</div>
+<div class="column right">
+</div>
+</div>
+
+
 <br><br><br>
 
 <div  align="center" id="footer">
