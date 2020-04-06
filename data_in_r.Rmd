@@ -41,21 +41,21 @@ knitr::opts_chunk$set(echo = FALSE)
 <div class="row">
 <div class="column left">
 <h4>Agriculture and watersheds in Hawaii</h4>
-  <a href="projects/map_hawaii.html">
-    <img alt="" src="projects/image/Hawaiian_Islands_Map.jpg" width="350" height="220">
+  <a href="data_in_r/map_hawaii.html">
+    <img alt="" src="data_in_r/cover_image/Hawaiian_Islands_Map.jpg" width="350" height="220">
   </a>
   <br><br>
-    <!-- <p>see <a href="projects/map_hawaii_code.html">code</a> behind</p> -->
+    <!-- <p>see <a href="data_in_r/map_hawaii_code.html">code</a> behind</p> -->
   <span class="badge" >Map</span>
   
 </div>
 <div class="column right">
 <h4>Santa Barbara Creek Chemistry</h4>
-<a href="projects/sb_creek.html">
-    <img alt="" src="projects/image/sb_creek.png" width="350" height="220">
+<a href="data_in_r/sb_creek.html">
+    <img alt="" src="data_in_r/cover_image/sb_creek.png" width="350" height="220">
   </a>
   <br><br>
-    <!-- <p>see <a href="projects/sb_creek_code.html">code</a> behind -->
+    <!-- <p>see <a href="data_in_r/sb_creek_code.html">code</a> behind -->
     <!-- </p> -->
   <span class="badge" >MLR</span> <span class="badge" >PCA</span> <span class="badge" >Clustering</span>
 </div>
@@ -68,16 +68,16 @@ knitr::opts_chunk$set(echo = FALSE)
 <!-- <div class="row"> -->
 <!-- <div class="column left"> -->
 <!-- <h4>Snowshoe hares in Alaska</h4> -->
-<!--   <a href="projects/snowshoe.html"> -->
-<!--     <img alt="" src="projects/image/snowshoe_cover.png" width="350"> -->
+<!--   <a href="data_in_r/snowshoe.html"> -->
+<!--     <img alt="" src="data_in_r/cover_image/snowshoe_cover.png" width="350"> -->
 <!--   </a> -->
 <!-- <br><br> -->
 <!-- <span class="badge" >Basic</span> -->
 <!-- </div> -->
 <!-- <div class="column right"> -->
 <!-- <h4>Nutrients in vegan vs. non-vegan</h4> -->
-<!--   <a href="projects/nutrient.html"> -->
-<!--     <img alt="" src="projects/image/food_cover.png" width="350"> -->
+<!--   <a href="data_in_r/nutrient.html"> -->
+<!--     <img alt="" src="data_in_r/cover_image/food_cover.png" width="350"> -->
 <!--   </a> -->
 <!-- <br><br> -->
 <!-- <span class="badge" >PCA</span> -->
@@ -89,11 +89,11 @@ knitr::opts_chunk$set(echo = FALSE)
 <div class="row">
 <div class="column left">
 <h4>Steelhead passing the Bonneville Dam</h4>
-  <a href="projects/steelhead_salmon_migration.html">
-    <img alt="" src="projects/image/steelhead.jpeg" height="400">
+  <a href="data_in_r/steelhead_salmon_migration.html">
+    <img alt="" src="data_in_r/cover_image/steelhead.jpeg" height="400">
   </a>
   <br><br>
-  <!-- <p>see <a href="projects/steelhead_salmon_migration_code.html">code</a> behind -->
+  <!-- <p>see <a href="data_in_r/steelhead_salmon_migration_code.html">code</a> behind -->
   <!-- </p> -->
   <span class="badge">Time Series</span>
 
@@ -101,11 +101,11 @@ knitr::opts_chunk$set(echo = FALSE)
 </div>
 <div class="column right">
 <h4>Milan Kundera</h4>
-  <a href="projects/text_mining_on_the_unbearable.html">
-    <img alt="" src="projects/image/unbearable.jpg" height="400">
+  <a href="data_in_r/text_mining_on_the_unbearable.html">
+    <img alt="" src="data_in_r/cover_image/unbearable.jpg" height="400">
   </a>
   <br><br>
-  <!-- <p>see <a href="projects/text_mining_on_the_unbearable_code.html">code</a> behind</p> -->
+  <!-- <p>see <a href="data_in_r/text_mining_on_the_unbearable_code.html">code</a> behind</p> -->
   <span class="badge" >Text mining</span>
   
 </div>
@@ -119,7 +119,7 @@ knitr::opts_chunk$set(echo = FALSE)
 <div class="column left">
 <h4>Green Footprint</h4>
   <a href="https://ruoyuwang.shinyapps.io/GreenFootprint/">
-    <img alt="" src="projects/image/green_fp.png" height="350" >
+    <img alt="" src="data_in_r/cover_image/green_fp.png" height="350" >
   </a>
   <br><br>
     <p>see the <a href="https://devpost.com/software/greentrack-ss-rw">story</a> and <a href="https://github.com/Ruoyu-Wang108/greentrack-ss-rw">GitHub Repo</a>
@@ -128,7 +128,7 @@ knitr::opts_chunk$set(echo = FALSE)
 </div> 
 <div class="column right">
 <h4>AnimalDex</h4>
-   <img alt="" src="projects/image/coming_soon.png" height="350">   
+   <img alt="" src="data_in_r/cover_image/coming_soon.png" height="350">   
 <br>
   <span class="badge" >Shinyapp</span>
 </div>

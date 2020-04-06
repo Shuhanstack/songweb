@@ -37,7 +37,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <br><br><br>
 
-![](image/intro.JPG)
+![](about_me/intro.JPG)
 
 <div class="row">
   <div class="column left" align="center">
@@ -46,7 +46,7 @@ knitr::opts_chunk$set(echo = TRUE)
     
   </div>
   <div class="column right">
-  <p>Passionate about <font color="lightpink">conservation planning</font> and <font color="skyblue">environmental management</font>, Shuhan is currently studying **Environmental Science and Management** at Bren School at UCSB in the completion of her master's degree. She is seeking a career that will create and protect a more <i><font color="forestgreen">sustainable</font>, <font color="lightseagreen">diverse</font>, and <font color="indianred">productive</font> <strong>ecosystem</strong></i>. She loves being in the <font color="seagreen">field</font> to observe and learn no less than sitting in front of a <font color="darksalmon">computer</font> to code and map. Born in Beijing, China, Shuhan speaks both <font color="steelblue">English and Mandarin</font>. In her free time, she enjoys <font color="palevioletred">drawing</font>, <font color="olivedrab">hiking</font>, <font color="mediumorchid">visiting museums</font>, and <font color="plum">listening to jazz and violin solo</font> (link to [Violin Concerto No1. in D major by Mengla Huang and the string quintet](https://www.youtube.com/watch?v=rNM1CkCfjsk)). Fun fact: She has been a big fan of [Pablo Ruiz Picasso](image/picasso.JPG) since the age of five.
+  <p>Passionate about <font color="lightpink">conservation planning</font> and <font color="skyblue">environmental management</font>, Shuhan is currently studying **Environmental Science and Management** at Bren School at UCSB in the completion of her master's degree. She is seeking a career that will create and protect a more <i><font color="forestgreen">sustainable</font>, <font color="lightseagreen">diverse</font>, and <font color="indianred">productive</font> <strong>ecosystem</strong></i>. She loves being in the <font color="seagreen">field</font> to observe and learn no less than sitting in front of a <font color="darksalmon">computer</font> to code and map. Born in Beijing, China, Shuhan speaks both <font color="steelblue">English and Mandarin</font>. In her free time, she enjoys <font color="palevioletred">drawing</font>, <font color="olivedrab">hiking</font>, <font color="mediumorchid">visiting museums</font>, and <font color="plum">listening to jazz and violin solo</font> (link to [Violin Concerto No1. in D major by Mengla Huang and the string quintet](https://www.youtube.com/watch?v=rNM1CkCfjsk)). Fun fact: She has been a big fan of [Pablo Ruiz Picasso](about_me/picasso.JPG) since the age of five.
   </p>
   </div>
 </div>
@@ -79,9 +79,9 @@ knitr::opts_chunk$set(echo = TRUE)
   <ul>
   <p><u>Honor/Awards</u>: High Distinction in College of Natural Resources | Honors in Environmental Sciences| Dean’s List (Spring 2018)
   </p>
-  <p><u>Thesis</u>: [Assessing the Impact of Climate and Snowpack on the Distribution of Amphibian Species in Sierra Nevada](paper.html)
+  <p><u>Thesis</u>: [Assessing the Impact of Climate and Snowpack on the Distribution of Amphibian Species in Sierra Nevada](paper/amphibian_thesis.pdf)
   </p>
-  <p><u>Highlighted Skills</u>: Species distribution modeling (Maxent) | [Remote Sensing for Conservation & Biodiversity Certification](NASA_certificate_Shuhan Song.pdf), NASA’s Training Program (January 2019)
+  <p><u>Highlighted Skills</u>: Species distribution modeling (Maxent) | [Remote Sensing for Conservation & Biodiversity Certification](about_me/NASA_certificate_Shuhan Song.pdf), NASA’s Training Program (January 2019)
   </p>
   </ul>
 
@@ -194,7 +194,7 @@ knitr::opts_chunk$set(echo = TRUE)
   <h2>Timeline</h2>
   </div>
   <div class="column right">
-  <img src="resume_colorful.png">
+  <img src="about_me/resume_colorful.png">
   </div>
 </div>
 

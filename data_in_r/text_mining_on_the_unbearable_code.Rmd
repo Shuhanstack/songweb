@@ -6,7 +6,7 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, 
+knitr::opts_chunk$set(echo = TRUE, 
                       message = FALSE,
                       warning = FALSE)
 ```
@@ -98,7 +98,7 @@ library(ggwordcloud)
 ```{r}
 # load the book in pdf
 
-unbearable <- pdf_text(here("the_unbearable_lightness_of_being.pdf"))
+unbearable <- pdf_text(here("data", "the_unbearable_lightness_of_being.pdf"))
 ```
 
 ```{r}
