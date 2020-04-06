@@ -37,14 +37,14 @@ output: html_document
 <div class="row">
   <div class="column left">
 <h4>Wetland</h4>
-![](gallery/Wetland/1.pic_hd.jpg){width=400}
+![](gallery/cover_image/tap_wetland.jpg){width=400}
 <br><br>
   <p>What to take a closer look? <a href="gallery/tap_wetland.html">Yes</a>!</p>
   <span class="badge" >tapestry</span>
   </div>
 <div class="column right">
   <h4>Flower Sea</h4>
-  ![](gallery/Flower_Sea/cover.jpeg){width=400}
+  ![](gallery/cover_image/tap_flower_sea.jpeg){width=400}
   <br><br>
   <p><a href="gallery/tap_flower_sea.html">Here</a> are the details! Why not take a look?</p>
   <span class="badge" >tapestry</span>
