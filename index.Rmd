@@ -17,13 +17,13 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 <div class="jumbotron">
-  <h1 class="display-3">Hello World!</h1>
+  <h1 class="display-3">Hi there!</h1>
   <p>Welcome to <strong>Shuhan</strong>'s universe.</p>
   <hr class="my-4">
   <p>Here, you will learn about <strong>her</strong> love for <font color="skyblue1">science</font>, <font color="limegreen">nature</font>, and <font color="tomato">art</font>.</p>
   <br>
   <p class="lead">
-  <a class="btn btn-primary btn-lg" href="project.html" role="button">Let's begin</a>
+  <a class="btn btn-primary btn-lg" href="data_in_r.html" role="button">Let's begin</a>
   </p>
 </div>
 
