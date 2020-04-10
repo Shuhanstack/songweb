@@ -128,7 +128,9 @@ knitr::opts_chunk$set(echo = FALSE)
 </div> 
 <div class="column right">
 <h4>AnimalDex</h4>
-   <img alt="" src="data_in_r/cover_image/coming_soon.png" height="350">   
+  <a href = "https://shuhans.shinyapps.io/animaldex/">
+   <img alt="" src="data_in_r/cover_image/animaldex.png" height="350">   
+  </a>
 <br>
   <span class="badge" >Shinyapp</span>
 </div>
