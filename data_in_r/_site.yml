@@ -1,4 +1,27 @@
 name: "Data in R"
+navbar: 
+  left:
+  - text: "Home"
+    href: https://shuhanstack.github.io/songweb/index.html
+  - text: "Data in R"
+    href: https://shuhanstack.github.io/songweb/data_in_r.html
+  - text : "GIS"
+    href: https://shuhanstack.github.io/songweb/gis.html
+  - text: "Paper"
+    href: https://shuhanstack.github.io/songweb/paper.html
+  - text: "Gallery"
+    href: https://shuhanstack.github.io/songweb/gallery.html
+  - text: "About me"
+    href: https://shuhanstack.github.io/songweb/about_me.html
+  right:
+  - text: "LinkedIn"
+    href: https://www.linkedin.com/in/shuhan-song-nature/ 
+  - text: "GitHub"
+    href: https://github.com/Shuhanstack
+  - text: "Twitter"
+    href: https://twitter.com/song_shuhan
+  - text: "Etsy"
+    href: https://www.etsy.com/shop/waveryweave
 output_dir: "."
 output:  
   html_document:  
