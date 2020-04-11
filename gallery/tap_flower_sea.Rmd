@@ -3,22 +3,88 @@ title: "Flower Sea"
 author: "Designed and made by Shuhan Song"
 date: "November 2019"
 ---
+<style>
+.column {
+  float: left;
+  padding: 10px;
+}
 
-![](tap_flower_sea/10.jpeg)
+.left1 {
+  width: 50%;
+}
 
-![](tap_flower_sea/8.jpeg)
+.right1 {
+  width: 50%;
+}
 
+.left2 {
+width: 33%
+}
 
+.right2 {
+width: 67%
+}
+
+.left3 {
+width: 67%
+}
+
+.right3{
+width: 33%}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+</style>
+
+<div class = "row">
+<div class = "column left3">
+![](tap_flower_sea/10.jpeg){width=70%}
+</div>
+<div class = "column right3">
+</div>
+</div>
+
+<div class = "row">
+<div class = "column left1">
+</div>
+<div class = "column right1">
+![](tap_flower_sea/8.jpeg){width=90%}
+</div>
+</div>
+
+<div class = "row">
+<div class = "column left3">
 ![](tap_flower_sea/4.jpeg){width=50%}![](tap_flower_sea/3.jpeg){width=50%}
+</div>
+<div class = "column right3">
+</div>
+</div>
 
-![](tap_flower_sea/7.jpeg)
+<div class = "row">
+<div class = "column left2">
+</div>
+<div class = "column right2">
+![](tap_flower_sea/7.jpeg){width=80%}
+</div>
+</div>
 
-![](tap_flower_sea/6.jpeg){width=50%}![](tap_flower_sea/5.jpeg){width=50%}
 
+<div class="row">
+<div class = "column left1">
+![](tap_flower_sea/6.jpeg){width=50%}
+</div>
+<div class = "column right1">
+![](tap_flower_sea/5.jpeg){width=50%}
+</div>
+</div>
 
 <br>
 
 ### For your curiosity, this is how the back side looks like...
 
 <br>
-![](tap_flower_sea/9.jpeg)
+![](tap_flower_sea/9.jpeg){width=60%}
