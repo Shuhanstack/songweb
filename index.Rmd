@@ -10,17 +10,15 @@ knitr::opts_chunk$set(echo = TRUE)
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
+
 
 
 <div class="jumbotron">
   <h1 class="display-3">Hi there!</h1>
-  <p>Welcome to <strong>Shuhan</strong>'s universe.</p>
+  <h2>Welcome to <strong>Shuhan</strong>'s universe.</h2>
   <hr class="my-4">
-  <p>Here, you will learn about <strong>her</strong> love for <font color="skyblue1">science</font>, <font color="limegreen">nature</font>, and <font color="tomato">art</font>.</p>
+  <p>Are you ready to learn about <strong>her</strong> love for <font color="skyblue1">science</font>, <font color="limegreen">nature</font>, and <font color="tomato">art</font>? Scroll down to see an all-in-one infographic for her timeline or jump right into her world by clicking the button below.
+  </p>
   <br>
   <p class="lead">
   <a class="btn btn-primary btn-lg" href="data_in_r.html" role="button">Let's begin</a>
@@ -30,3 +28,4 @@ knitr::opts_chunk$set(echo = TRUE)
 <br>
 <br>
 
+<img src="about_me/resume_colorful.png">

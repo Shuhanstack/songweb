@@ -1,8 +1,7 @@
 name: "Shuhan's Personal Website"
 navbar: 
+  title: "Shuhan Song"
   left:
-  - text: "Home"
-    href: index.html
   - text: "Data in R"
     href: data_in_r.html
   - text : "GIS"
