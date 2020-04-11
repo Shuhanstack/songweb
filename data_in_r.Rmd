@@ -40,6 +40,30 @@ knitr::opts_chunk$set(echo = FALSE)
 
 <div class="row">
 <div class="column left">
+<h4>Green Footprint</h4>
+  <a href="https://ruoyuwang.shinyapps.io/GreenFootprint/">
+    <img alt="" src="data_in_r/cover_image/green_fp.png" height="350" >
+  </a>
+  <br><br>
+    <p>see the <a href="https://devpost.com/software/greentrack-ss-rw">story</a> and <a href="https://github.com/Ruoyu-Wang108/greentrack-ss-rw">GitHub Repo</a>
+    </p>
+  <span class="badge" >Shinyapp</span>
+</div> 
+<div class="column right">
+<h4>AnimalDex</h4>
+  <a href = "https://shuhans.shinyapps.io/animaldex/">
+   <img alt="" src="data_in_r/cover_image/animaldex.png" height="350">   
+  </a>
+<br>
+  <span class="badge" >Shinyapp</span>
+</div>
+</div>
+
+
+<br>
+
+<div class="row">
+<div class="column left">
 <h4>Agriculture and watersheds in Hawaii</h4>
   <a href="data_in_r/map_hawaii.html">
     <img alt="" src="data_in_r/cover_image/Hawaiian_Islands_Map.jpg" width="350" height="220">
@@ -111,30 +135,6 @@ knitr::opts_chunk$set(echo = FALSE)
 </div>
 </div>
 
-
-<br>
-
-
-<div class="row">
-<div class="column left">
-<h4>Green Footprint</h4>
-  <a href="https://ruoyuwang.shinyapps.io/GreenFootprint/">
-    <img alt="" src="data_in_r/cover_image/green_fp.png" height="350" >
-  </a>
-  <br><br>
-    <p>see the <a href="https://devpost.com/software/greentrack-ss-rw">story</a> and <a href="https://github.com/Ruoyu-Wang108/greentrack-ss-rw">GitHub Repo</a>
-    </p>
-  <span class="badge" >Shinyapp</span>
-</div> 
-<div class="column right">
-<h4>AnimalDex</h4>
-  <a href = "https://shuhans.shinyapps.io/animaldex/">
-   <img alt="" src="data_in_r/cover_image/animaldex.png" height="350">   
-  </a>
-<br>
-  <span class="badge" >Shinyapp</span>
-</div>
-</div>
 
 <br>
 
