@@ -38,6 +38,8 @@ knitr::opts_chunk$set(echo = FALSE)
 
 <br><br><br>
 
+<!-- first row -- shiny apps-->
+
 <div class="row">
 <div class="column left">
 <h4>Green Footprint</h4>
@@ -61,6 +63,8 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 <br>
+
+<!-- second row -->
 
 <div class="row">
 <div class="column left">
@@ -88,27 +92,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 <br>
 
-
-<!-- <div class="row"> -->
-<!-- <div class="column left"> -->
-<!-- <h4>Snowshoe hares in Alaska</h4> -->
-<!--   <a href="data_in_r/snowshoe.html"> -->
-<!--     <img alt="" src="data_in_r/cover_image/snowshoe_cover.png" width="350"> -->
-<!--   </a> -->
-<!-- <br><br> -->
-<!-- <span class="badge" >Basic</span> -->
-<!-- </div> -->
-<!-- <div class="column right"> -->
-<!-- <h4>Nutrients in vegan vs. non-vegan</h4> -->
-<!--   <a href="data_in_r/nutrient.html"> -->
-<!--     <img alt="" src="data_in_r/cover_image/food_cover.png" width="350"> -->
-<!--   </a> -->
-<!-- <br><br> -->
-<!-- <span class="badge" >PCA</span> -->
-<!-- </div> -->
-<!-- </div> -->
-
-<!-- <br> -->
+<!-- third row -->
 
 <div class="row">
 <div class="column left">
@@ -138,9 +122,36 @@ knitr::opts_chunk$set(echo = FALSE)
 
 <br>
 
+<!-- fourth row -->
 
 
+<div class="row">
+<div class="column left">
+<h4>Snowshoe hares in Alaska</h4>
+  <a href="data_in_r/snowshoe.html">
+    <img alt="" src="data_in_r/cover_image/snowshoe_cover.png" width="350">
+  </a>
 <br><br>
+<p>see <a href="data_in_r/snowshoe_code.html">code</a> behind 
+</p>
+<span class="badge" >Basic</span>
+
+</div>
+<div class="column right">
+<h4>Nutrients in vegan vs. non-vegan</h4>
+  <a href="data_in_r/nutrient.html">
+    <img alt="" src="data_in_r/cover_image/food_cover.png" width="350">
+  </a>
+<br><br>
+<p>see <a href="data_in_r/nutrient_code.html">code</a> behind 
+</p>
+<span class="badge" >PCA</span>
+</div>
+</div>
+
+
+
+<br><br><br>
 
 
 <div  align="center" id="footer">

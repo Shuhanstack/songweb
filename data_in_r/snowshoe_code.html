@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Shuhan Song" />
+
+
+<title>Snowshoe hares in Alaska</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+      </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 61px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h2 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h3 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h4 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h5 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h6 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="https://shuhanstack.github.io/songweb/index.html">Home</a>
+</li>
+<li>
+  <a href="https://shuhanstack.github.io/songweb/data_in_r.html">Data in R</a>
+</li>
+<li>
+  <a href="https://shuhanstack.github.io/songweb/gis.html">GIS</a>
+</li>
+<li>
+  <a href="https://shuhanstack.github.io/songweb/paper.html">Paper</a>
+</li>
+<li>
+  <a href="https://shuhanstack.github.io/songweb/gallery.html">Gallery</a>
+</li>
+<li>
+  <a href="https://shuhanstack.github.io/songweb/about_me.html">About me</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://www.linkedin.com/in/shuhan-song-nature/">LinkedIn</a>
+</li>
+<li>
+  <a href="https://github.com/Shuhanstack">GitHub</a>
+</li>
+<li>
+  <a href="https://twitter.com/song_shuhan">Twitter</a>
+</li>
+<li>
+  <a href="https://www.etsy.com/shop/waveryweave">Etsy</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Snowshoe hares in Alaska</h1>
+<h4 class="author">Shuhan Song</h4>
+<h4 class="date">1/25/2020</h4>
+
+</div>
+
+
+<div id="introduction" class="section level3">
+<h3>Introduction</h3>
+<p>The snowshoe hares (<em>Lepus americanus</em>), named after its big hind feet, is a keystone prey species in northern boreal forests in North America. They are shy and secretive and prefer habitats with a dense shrub layer. The rabbits active year-round and turn their fur white during the winter and rusty brown during the summer for camouflage.</p>
+<div class="figure">
+<img src="image/white.jpg" alt="Snowshoe hares in winter" width="700" />
+<p class="caption">Snowshoe hares in winter</p>
+</div>
+<div class="figure">
+<img src="image/black.jpg" alt="Snowshoe hares in summer" width="700" />
+<p class="caption">Snowshoe hares in summer</p>
+</div>
+<p><em>Picture in winter was downloaded from <a href="https://cottagelife.com/outdoors/wild-profile-meet-the-snowshoe-hare/">Cottage Life</a>. The one in summer was from <a href="https://www.mtpr.org/post/strange-practical-why-snowshoe-hares-eat-their-own-feces">Montana Public Radio</a>.</em></p>
+</div>
+<div id="data-source-and-method" class="section level3">
+<h3>Data Source and Method</h3>
+<p>I used capture-recapture data of snowshoe hares at five locations in the Bonanza Creek Experimental Forest of Tanana Valley, Alaska to explore how the weight of snowshoe hares is related to sex and changed with time. The data was provided by Bonanza Creek LTER and its time scale ranged from 1999 to 2012, where Snowshoe hares densities peaked in 1999 then declined (Kielland et al. 2017). I looked at the distribution and summary table of weight from 1999 to 2012 and track the weight of 11 individuals captured-recaptured more than 15 times.</p>
+<p><img src="image/map.png" width="700" /></p>
+<p><em>Made from Google Earth Engine on Feb. 4, 2020.</em></p>
+</div>
+<div id="result" class="section level3">
+<h3>Result</h3>
+<pre class="r"><code># read in snowshoe data
+snowshoe &lt;- read_csv(here::here(&quot;data&quot;, &quot;showshoe_lter.csv&quot;))</code></pre>
+<pre class="r"><code># look at the data
+skim(snowshoe)
+# &quot;weight&quot; had 535 NA, &quot;sex&quot; had 352 NA, while &quot;hindft&quot; had 1747 and &quot;age&quot; had 2111. &quot;Hindft&quot; and &quot;age&quot; had too many missing values so I will focus on exploring snowshoe hares &quot;weight&quot; and &quot;sex&quot;. 
+
+unique(snowshoe$sex)
+# better to exclude observations that were uncertain about sex.</code></pre>
+<pre class="r"><code># clean up sex column
+snowshoe_clean &lt;- snowshoe %&gt;% 
+  filter(sex %in% c(&quot;M&quot;, &quot;m&quot;, &quot;F&quot;, &quot;f&quot;)) %&gt;% 
+  mutate(sex = str_to_lower(sex)) %&gt;% 
+  filter(b_key != 285) # 285 was identified as pregnant male, a wrong observation
+
+# snowshoe_clean has 2923 observations, filtering &quot;sex&quot; column did not have big impact on sample size. 
+
+# Change the &quot;m&quot; to &quot;Male&quot; and &quot;f&quot; to &quot;Female&quot; for better visualization
+snowshoe_clean$sex[snowshoe_clean$sex == &quot;f&quot;] &lt;- &quot;Female&quot;
+snowshoe_clean$sex[snowshoe_clean$sex == &quot;m&quot;] &lt;- &quot;Male&quot;</code></pre>
+<p>The distributions of snowshoe hares weight from 1999 to 2012 were plotted for both males and females (Figure 1).</p>
+<pre class="r"><code>ggplot(data = snowshoe_clean, aes(x = weight)) +
+  geom_histogram(aes(color = sex, fill = sex), alpha = 0.3) +
+  facet_wrap(~sex) +
+  theme_bw() +
+  labs(color = &quot;Sex&quot;, 
+       fill = &quot;Sex&quot;,
+       x = &quot;Snowshoe hares weight (g)&quot;,
+       y = &quot;Count&quot;) </code></pre>
+<p><img src="snowshoe_code_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><em><strong>Figure 1: Distributions of snowshoe hares weight for males and females (1999-2012).</strong> The weight of snowshoe hares were normally distributed and peaked around 1500g for both sex. There were slightly more females (red) than males (green). Data source: Bonanza Creek LTER</em></p>
+<pre class="r"><code># summary table of snowshoe hares&#39; weight for both sex
+weight_summary &lt;- snowshoe_clean %&gt;% 
+  group_by(sex) %&gt;% 
+  summarize(mean = round(mean(weight, na.rm = TRUE), 2),
+            median = round(median(weight, na.rm = TRUE), 2),
+            stdv = round(sd(weight, na.rm = TRUE), 2),
+            count = n()
+            )</code></pre>
+<p>I summarized the means, medians, standard deviations, and number of observations of weight of snowshoe hares for females and males (Table 1). On average, males weighted sligthly less than females.</p>
+<p><em><strong>Table 1: Summary of snowshoe hares weight for males and females (1999-2012).</strong> The weight of female snowshoe hares (mean = 1367.43, sd = , n = 1716) did not differ much from males (mean = 1339.57, sd = , n = 1207). Data source: Bonanza Creek LTER</em></p>
+<pre class="r"><code>kable(weight_summary, 
+      col.names = c(&quot;Sex&quot;, &quot;Mean (g)&quot;, &quot;Median (g)&quot;, &quot;Standard Deviation (g)&quot;, &quot;Sample Size&quot;)) %&gt;% 
+  kable_styling(bootstrap_options = &quot;striped&quot;,
+                position = &quot;center&quot;,
+                full_width = FALSE)</code></pre>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Sex
+</th>
+<th style="text-align:right;">
+Mean (g)
+</th>
+<th style="text-align:right;">
+Median (g)
+</th>
+<th style="text-align:right;">
+Standard Deviation (g)
+</th>
+<th style="text-align:right;">
+Sample Size
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Female
+</td>
+<td style="text-align:right;">
+1367.43
+</td>
+<td style="text-align:right;">
+1420
+</td>
+<td style="text-align:right;">
+345.68
+</td>
+<td style="text-align:right;">
+1716
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Male
+</td>
+<td style="text-align:right;">
+1339.57
+</td>
+<td style="text-align:right;">
+1380
+</td>
+<td style="text-align:right;">
+305.13
+</td>
+<td style="text-align:right;">
+1207
+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<div id="track-individuals" class="section level4">
+<h4>Track individuals</h4>
+<pre class="r"><code># get the unique identifiers for individuals that were recaptured for at least 20 times
+snowshoe_id &lt;- snowshoe_clean %&gt;% 
+  count(b_key) %&gt;% 
+  filter(n &gt; 15) %&gt;% 
+  arrange(desc(n))
+
+# filter out the above individuals
+snowshoe_track &lt;- snowshoe_clean %&gt;% 
+  filter(b_key %in% c(unique(snowshoe_id$b_key)))</code></pre>
+<pre class="r"><code># look at the data
+skim(snowshoe_track)
+# nearly 2/3 of the &quot;age&quot; and &quot;hindft&quot; data was absent. While there were 50 NAs for &quot;weight&quot;, no data was missing for &quot;date&quot; and &quot;sex&quot;. Therefore, it&#39;s reasonable to track the weight of these individuals through time.</code></pre>
+<pre class="r"><code># parse date
+snowshoe_trck_parse_date &lt;- snowshoe_track %&gt;% 
+  drop_na(weight) %&gt;% 
+  separate(date, into = c(&quot;month&quot;, &quot;day&quot;, &quot;year&quot;), sep = &quot;/&quot;) # separate year and month from &quot;date&quot;</code></pre>
+<p>There were 11 individuals with more than 15 observations that were tracked. The corresponding time range spanned from 2003 to 2011. Mean weights were calculated for observations in months and years when the 11 individuals were captured/recaptured. The trend of changes in mean weight goes relatively consistent in either gender groups, especially for Male #163 and #92, Female #246 and #233, and Female #969, #737 and #729 (except year 2011) (Figure 2). Most of the 11 individuals weighted more than the population means at various time spots of sampling. In general, most of the 11 individuals had their weights increased when they were recaptured. The results could have represented a survivor bias where individuals couldn’t live well had a lower chance of being recaptured.</p>
+<pre class="r"><code># prepare data to plot tracking of the individuals
+snowshoe_trck_wt &lt;- snowshoe_trck_parse_date %&gt;% 
+  group_by(b_key, year, month, sex) %&gt;% 
+  summarize(mean = round(mean(weight, na.rm = TRUE), 2)) %&gt;% # calculate the mean weight for observations in each month
+  mutate(time = as.numeric(year) + as.numeric(month)/12 ) %&gt;% # change time scale to years
+  ungroup() %&gt;% 
+  group_by(b_key) %&gt;% 
+  mutate(label = if_else(time != min(time), &quot;NA&quot;, as.character(b_key))) %&gt;% # create label for each individual
+  na_if(&quot;NA&quot;) %&gt;% 
+  arrange(desc(sex))
+
+# add population mean weight (2003-2011) to the tracking plot
+weight_summary_trck &lt;- snowshoe_clean %&gt;% 
+  separate(date, into = c(&quot;month&quot;, &quot;day&quot;, &quot;year&quot;), sep = &quot;/&quot;) %&gt;% 
+  filter(year %in% c(&quot;03&quot;, &quot;04&quot;, &quot;05&quot;, &quot;06&quot;, &quot;07&quot;, &quot;08&quot;, &quot;09&quot;, &quot;10&quot;, &quot;11&quot;)) %&gt;% 
+  group_by(sex) %&gt;% 
+  summarize(mean = round(mean(weight, na.rm = TRUE), 2)) %&gt;% 
+  mutate(label = as.character(str_glue(&quot;population mean = {mean}g&quot;))) # add lable to the summary table </code></pre>
+<pre class="r"><code>ggplot(data = snowshoe_trck_wt, aes(x = time, y = mean)) +
+  geom_hline(data = weight_summary_trck, 
+             aes(yintercept = mean),
+             color = &quot;gray50&quot;,
+             linetype = &quot;dotted&quot;,
+             show.legend = FALSE) + # add horizonal line of populaiton mean
+  geom_point(aes(color = as.factor(b_key)),
+             show.legend = FALSE) +
+  geom_line(aes(color = as.factor(b_key),
+                group = as.factor(b_key)),
+            show.legend = FALSE) +
+  facet_grid(sex~.) +
+  scale_x_continuous(limits = c(2.8, 12),
+                     breaks = c(3, 4, 5, 6, 7, 8, 9, 10, 11, 12),
+                     labels = c(&quot;03&quot;, &quot;04&quot;, &quot;05&quot;, &quot;06&quot;, &quot;07&quot;, &quot;08&quot;, &quot;09&quot;, &quot;10&quot;, &quot;11&quot;, &quot;12&quot;)) + # change breaks and labels of x axis to represent the year
+  scale_y_continuous(limits = c(0, 2000)) +
+  scale_color_manual(values = c(&quot;purple3&quot;, &quot;tan3&quot;, &quot;navy&quot;, &quot;plum&quot;, &quot;lightslategrey&quot;, &quot;mediumseagreen&quot;, &quot;maroon3&quot;, &quot;sienna3&quot;, &quot;yellowgreen&quot;, &quot;salmon&quot;, &quot;lightblue3&quot;, &quot;darkred&quot;, &quot;brown1&quot;, &quot;paleturquoise2&quot;)) + # set color of snowshoe hares points and lines
+  geom_label_repel(aes(label = label,
+                       color = as.factor(label)),
+                  nudge_y = -5,
+                  alpha = 0.7,
+                  size = 2.5,
+                  na.rm = TRUE,
+                  show.legend = FALSE) + # add label for each individuals 
+  geom_text_repel(data = weight_summary_trck,
+                   aes(x = 3, 
+                       y = mean,
+                       label = label),
+                  nudge_y = 80,
+                  nudge_x = -5,
+                  segment.colour = NA,
+                  size = 2.5,
+                  na.rm = TRUE,
+                  show.legend = FALSE) + # add label for population means
+  labs(x = &quot;Year&quot;, 
+       y = &quot;Mean weight of snowshoe hares (g)&quot;) +
+  theme_bw() +
+  theme(panel.grid.minor.y = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.x = element_blank())</code></pre>
+<p><img src="snowshoe_code_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><em><strong>Figure 2: Track 11 individual’s weight of snowshoe hares for both males and females (2003-2011).</strong> The graph included 8 females and 3 males that had more than 15 capture-recapture records and labeled their unqiue animal identifiers in boxes. The population means (2003-2011) for males and females were plotted as dotted line and had the value labeled. Most indivduals in this subset weighted more than the population averages. Data source: Bonanza Creek LTER</em></p>
+</div>
+</div>
+<div id="reference" class="section level3">
+<h3>Reference</h3>
+<p>Kielland K., F. S. Chapin, R. W. Ruess. 2017. Snowshoe hare physical data in Bonanza Creek Experimental Forest: 1999-Present. Environmental Data Initiative. <a href="https://doi.org/10.6073/pasta/03dce4856d79b91557d8e6ce2cbcdc14" class="uri">https://doi.org/10.6073/pasta/03dce4856d79b91557d8e6ce2cbcdc14</a>.</p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
