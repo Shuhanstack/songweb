@@ -1,7 +1,7 @@
 
 ## songweb content organization
 
-This folder contains all contents and supporting files to publish [songweb](hanstack.github.io/songweb/).
+This folder contains all contents and supporting files to publish [songweb](https://shuhanstack.github.io/songweb/).
 
 - `README.md`: this file. It introduces and explains the file management system of songweb
 - `songweb.Rproj`: R project that is used to write and build the web
