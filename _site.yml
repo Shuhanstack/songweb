@@ -2,16 +2,16 @@ name: "Shuhan's Personal Website"
 navbar: 
   title: "Shuhan Song"
   left:
-  - text: "Data in R"
+  - text: "Works"
     href: data_in_r.html
-  - text : "GIS"
-    href: gis.html
-  - text: "Paper"
-    href: paper.html
-  - text: "Gallery"
-    href: gallery.html
-  - text: "About me"
-    href: about_me.html
+  # - text : "GIS"
+  #   href: gis.html
+  # - text: "Paper"
+  #   href: paper.html
+  # - text: "Gallery"
+  #   href: gallery.html
+  # - text: "About me"
+  #   href: about_me.html
  
   right:
   - text: "LinkedIn"

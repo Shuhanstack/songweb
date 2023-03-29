@@ -28,13 +28,13 @@ knitr::opts_chunk$set(echo = FALSE)
 
 </style>
 
-<br><br><br>
+<!-- <br><br><br> -->
 
-<center>
+<!-- <center> -->
 
-<h2>Data analysis in R&emsp;&emsp;&emsp;&emsp;</h2>
+<!-- <h2>Data analysis in R&emsp;&emsp;&emsp;&emsp;</h2> -->
 
-</center>
+<!-- </center> -->
 
 <br><br><br>
 
@@ -175,7 +175,7 @@ knitr::opts_chunk$set(echo = FALSE)
   <button type="button" class="btn btn-primary disabled">
     <a href="index.html" style="color:white">Home</a>
   </button>
-  <button type="button" class="btn btn-primary disabled">
-    <a href="gis.html" style="color:white">GIS</a>
-  </button>
+  <!-- <button type="button" class="btn btn-primary disabled"> -->
+  <!--   <a href="gis.html" style="color:white">GIS</a> -->
+  <!-- </button> -->
 </div>

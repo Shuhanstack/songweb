@@ -11,14 +11,24 @@
 
 
 
-<title>about_me.utf8</title>
+<title>about_me.knit</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -33,11 +43,6 @@
     </style>
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -50,32 +55,7 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 
 
@@ -86,10 +66,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -106,40 +82,16 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 61px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h2 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h3 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h4 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h5 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h6 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -167,7 +119,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -179,7 +131,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -189,11 +141,28 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.parent().addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -205,13 +174,12 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -219,16 +187,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -272,7 +233,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -282,19 +243,7 @@ $(document).ready(function () {
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="data_in_r.html">Data in R</a>
-</li>
-<li>
-  <a href="gis.html">GIS</a>
-</li>
-<li>
-  <a href="paper.html">Paper</a>
-</li>
-<li>
-  <a href="gallery.html">Gallery</a>
-</li>
-<li>
-  <a href="about_me.html">About me</a>
+  <a href="data_in_r.html">Works</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -309,7 +258,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -352,48 +301,61 @@ Education
 </div>
 <div class="column right">
 <h4>
-<strong>Master of Environmental Science and Management</strong> <small class="text-muted">3.90 GPA (June 2021) </small>
+<strong>Master of Environmental Science and Management</strong>
+<small class="text-muted">3.90 GPA (June 2021) </small>
 </h4>
 <h5>
-Bren School of Environmental Science &amp; Management – University of California, Santa Barbara
+Bren School of Environmental Science &amp; Management – University of
+California, Santa Barbara
 </h5>
 <ul>
 <p>
-<u>Specialization</u>: Conservation Planning | Focus: Environmental Data Science
+<u>Specialization</u>: Conservation Planning | Focus: Environmental Data
+Science
 </p>
 <p>
-<u>Highlighted Coursework</u>: GIS | Machine Learning | Advanced Data Analysis | Ecological Restoration<br />
+<u>Highlighted Coursework</u>: GIS | Machine Learning | Advanced Data
+Analysis | Ecological Restoration<br />
 
 </p>
 </ul>
 <p><br></p>
 <h4>
-<strong>Bachelor of Science in Environmental Sciences</strong> <small class="text-muted">3.87 GPA (May 2019) </small>
+<strong>Bachelor of Science in Environmental Sciences</strong>
+<small class="text-muted">3.87 GPA (May 2019) </small>
 </h4>
 <h5>
 University of California, Berkeley
 </h5>
 <ul>
 <p>
-<u>Honor/Awards</u>: High Distinction in College of Natural Resources | Honors in Environmental Sciences| Dean’s List (Spring 2018)
+<u>Honor/Awards</u>: High Distinction in College of Natural Resources |
+Honors in Environmental Sciences| Dean’s List (Spring 2018)
 </p>
 <p>
-<u>Thesis</u>: <a href="paper/amphibian_thesis.pdf">Assessing the Impact of Climate and Snowpack on the Distribution of Amphibian Species in Sierra Nevada</a>
+<u>Thesis</u>: <a href="paper/amphibian_thesis.pdf">Assessing the Impact
+of Climate and Snowpack on the Distribution of Amphibian Species in
+Sierra Nevada</a>
 </p>
 <p>
-<u>Highlighted Skills</u>: Species distribution modeling (Maxent) | <a href="about_me/NASA_certificate_Shuhan%20Song.pdf">Remote Sensing for Conservation &amp; Biodiversity Certification</a>, NASA’s Training Program (January 2019)
+<u>Highlighted Skills</u>: Species distribution modeling (Maxent) | <a
+href="about_me/NASA_certificate_Shuhan%20Song.pdf">Remote Sensing for
+Conservation &amp; Biodiversity Certification</a>, NASA’s Training
+Program (January 2019)
 </p>
 </ul>
 <p><br></p>
 <h4>
-<strong>Associate of Science in Mathematics</strong> <small class="text-muted">3.94 GPA (June 2017) </small>
+<strong>Associate of Science in Mathematics</strong>
+<small class="text-muted">3.94 GPA (June 2017) </small>
 </h4>
 <h5>
 East Los Angeles College
 </h5>
 <ul>
 <p>
-<u>Honor/Awards</u>: President’s Award (9/15-6/17) | Dean’s Honor List (9/14-6/17)
+<u>Honor/Awards</u>: President’s Award (9/15-6/17) | Dean’s Honor List
+(9/14-6/17)
 </p>
 </ul>
 </div>
@@ -418,7 +380,8 @@ GIS | Maxent | R | Photoshop | InDesign | Microsoft Office
 </h4>
 <ul>
 <p>
-English (fluent in speaking &amp; writing with 17+ years learning experience) | Mandarin (native speaker)
+English (fluent in speaking &amp; writing with 17+ years learning
+experience) | Mandarin (native speaker)
 </p>
 </ul>
 </div>
@@ -431,92 +394,130 @@ Experience
 </div>
 <div class="column right">
 <h4>
-<strong>Field Assistant</strong> <small class="text-muted"> China (7/19) </small>
+<strong>Field Assistant</strong> <small class="text-muted"> China (7/19)
+</small>
 </h4>
 <h5>
 Qianyanzhou Ecological Research Station, Chinese Academy of Science
 </h5>
 <ul>
 <li>
-Resurveyed 4000+ pioneer pines (Masson’s Pine and Slash Pine) in 36 forest plantation plots for a landscape restoration program to evaluate tree growth and canopy change by measuring breast height diameter, crown width, and crown closure in collaboration with a 12-member research team.
+Resurveyed 4000+ pioneer pines (Masson’s Pine and Slash Pine) in 36
+forest plantation plots for a landscape restoration program to evaluate
+tree growth and canopy change by measuring breast height diameter, crown
+width, and crown closure in collaboration with a 12-member research
+team.
 </li>
 <li>
-Assembled species diversity data and total coverage data of herbaceous plants and young woody plants to examine the underfloor development in each plot in comparison with last year’s data.
+Assembled species diversity data and total coverage data of herbaceous
+plants and young woody plants to examine the underfloor development in
+each plot in comparison with last year’s data.
 </li>
 <li>
-Sampled and measured the fresh/dry weight of fallen leaves, branches, fruits and seeds on forest floor in each plot to analyze the organic input of soil and nutrient recycling process.
+Sampled and measured the fresh/dry weight of fallen leaves, branches,
+fruits and seeds on forest floor in each plot to analyze the organic
+input of soil and nutrient recycling process.
 </li>
 </ul>
 <p><br></p>
 <h4>
-<strong>Herpetology Curatorial Assistant</strong> <small class="text-muted"> Berkeley, CA (9/18-5/19) </small>
+<strong>Herpetology Curatorial Assistant</strong>
+<small class="text-muted"> Berkeley, CA (9/18-5/19) </small>
 </h4>
 <h5>
 Museum of Vertebrate Zoology
 </h5>
 <ul>
 <li>
-Maintained collection organized by going over 3000+ accessions, 200+ loans, checking 2000+ individual specimens to ensure that researchers can easily locate specimens and corresponding data in the future.
+Maintained collection organized by going over 3000+ accessions, 200+
+loans, checking 2000+ individual specimens to ensure that researchers
+can easily locate specimens and corresponding data in the future.
 </li>
 <li>
-Calibrated the concentration of ethanol used to preserve herp specimens to allow a longer preservation time.
+Calibrated the concentration of ethanol used to preserve herp specimens
+to allow a longer preservation time.
 </li>
 <li>
-Prepared specimen loans to researchers from other institutions that made open access to and collaborated analysis of specimens, data and informational records possible.
+Prepared specimen loans to researchers from other institutions that made
+open access to and collaborated analysis of specimens, data and
+informational records possible.
 </li>
 <li>
-Designed part of the Herp Lab Display where I chose an endangered frog species in Sierra Nevada and created a guest activity to call more people’s attention to environmental change and biodiversity decline.
+Designed part of the Herp Lab Display where I chose an endangered frog
+species in Sierra Nevada and created a guest activity to call more
+people’s attention to environmental change and biodiversity decline.
 </li>
 <li>
-Introduced the specimens to guests and emphasized the importance of biodiversity to attract people’s interest to museums on annual Cal Day Open House which attracted 2800+ guests, almost 300+ over the last year.
+Introduced the specimens to guests and emphasized the importance of
+biodiversity to attract people’s interest to museums on annual Cal Day
+Open House which attracted 2800+ guests, almost 300+ over the last year.
 </li>
 </ul>
 <p><br></p>
 <h4>
-<strong>Prep Lab Volunteer</strong> <small class="text-muted"> Berkeley, CA (2/19-5/19) </small>
+<strong>Prep Lab Volunteer</strong> <small class="text-muted"> Berkeley,
+CA (2/19-5/19) </small>
 </h4>
 <h5>
 Museum of Vertebrate Zoology
 </h5>
 <ul>
 <li>
-Prepared snake, bird, and mice skeleton for the research collection by dissecting, defleshing, and documenting. Researchers can use the skeleton for studies on species anatomy, identification, and evolution in the future.
+Prepared snake, bird, and mice skeleton for the research collection by
+dissecting, defleshing, and documenting. Researchers can use the
+skeleton for studies on species anatomy, identification, and evolution
+in the future.
 </li>
 <li>
-Identified, collected, and recorded important data and information on parasites, major organs, tissue, and stomach content of the animal carcass before or during the preparation process. The records provide a complete, detailed, and reliable story of the specimen that can be used for researches from various backgrounds.
+Identified, collected, and recorded important data and information on
+parasites, major organs, tissue, and stomach content of the animal
+carcass before or during the preparation process. The records provide a
+complete, detailed, and reliable story of the specimen that can be used
+for researches from various backgrounds.
 </li>
 </ul>
 <p><br></p>
 <h4>
-<strong>Insect Diversity Lab Assistant</strong> <small class="text-muted"> Berkeley, CA (9/17-5/18) </small>
+<strong>Insect Diversity Lab Assistant</strong>
+<small class="text-muted"> Berkeley, CA (9/17-5/18) </small>
 </h4>
 <h5>
 Dr. Kremen’s Lab
 </h5>
 <ul>
 <li>
-Identified and sorted insects from 20+ species collected in 90+ plots for an agriculture research on biological pest control methods of strawberry field which can minimize the use of pesticides.
+Identified and sorted insects from 20+ species collected in 90+ plots
+for an agriculture research on biological pest control methods of
+strawberry field which can minimize the use of pesticides.
 </li>
 <li>
-Documented morphospecies of 100+ specimens in the order Diptera for Essig Museum of Entomology.
+Documented morphospecies of 100+ specimens in the order Diptera for
+Essig Museum of Entomology.
 </li>
 </ul>
 <p><br></p>
 <h4>
-<strong>Head of the Advertisement Department</strong> <small class="text-muted"> Los Angeles, CA (3/15-2/17) </small>
+<strong>Head of the Advertisement Department</strong>
+<small class="text-muted"> Los Angeles, CA (3/15-2/17) </small>
 </h4>
 <h5>
 East Los Angeles College – Chinese Students and Scholars Association
 </h5>
 <ul>
 <li>
-Directed 6-person advertising team to design posters, brochures, and videos for Spring Festival Gala, Lantern Festivals, and Southwestern CSSA Basketball Competition, each of which attracted 200+ people annually.
+Directed 6-person advertising team to design posters, brochures, and
+videos for Spring Festival Gala, Lantern Festivals, and Southwestern
+CSSA Basketball Competition, each of which attracted 200+ people
+annually.
 </li>
 <li>
-Designed posters and flyers and posted digital versions on social media for foodsales which earned a daily revenue of $300+ for agency.
+Designed posters and flyers and posted digital versions on social media
+for foodsales which earned a daily revenue of $300+ for agency.
 </li>
 <li>
-Initiated an online collection of 200+ documents including past club photos, designs, logos and advertising materials which has been used for 3+ years and been given access to 50+ members in the organization.
+Initiated an online collection of 200+ documents including past club
+photos, designs, logos and advertising materials which has been used for
+3+ years and been given access to 50+ members in the organization.
 </li>
 </ul>
 </div>
@@ -542,13 +543,15 @@ Contact me
 <strong>Email</strong>
 </h4>
 <p>
-<a href="mailto:shuhan@bren.ucsb.edu" class="email">shuhan@bren.ucsb.edu</a>
+<a href="mailto:shuhan@bren.ucsb.edu"
+class="email">shuhan@bren.ucsb.edu</a>
 </p>
 </div>
 </div>
 <p><br><br><br></p>
 <div id="footer" align="center">
-<p><button type="button" class="btn btn-primary disabled" ><a href="gallery.html" style="color:white" >Gallery</a></button> <button type="button" class="btn btn-primary disabled"><a href="index.html" style="color:white">Home</a></button></p>
+<p><button type="button" class="btn btn-primary disabled" ><a href="gallery.html" style="color:white" >Gallery</a></button>
+<button type="button" class="btn btn-primary disabled"><a href="index.html" style="color:white">Home</a></button></p>
 </div>
 
 
@@ -578,7 +581,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
