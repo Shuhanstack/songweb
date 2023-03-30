@@ -74,7 +74,7 @@ knitr::opts_chunk$set(echo = FALSE)
   </a>
   <br><br>
     <p>see <a href="data_in_r/map_hawaii_code.html">code</a> behind</p> 
-  <span class="badge" >Map</span>
+  <span class="badge" >Map</span> <span class="badge" >R</span>
   
 </div>
 <div class="column right">
@@ -85,7 +85,7 @@ knitr::opts_chunk$set(echo = FALSE)
   <br><br>
     <p>see <a href="data_in_r/sb_creek_code.html">code</a> behind 
     </p> 
-  <span class="badge" >MLR</span> <span class="badge" >PCA</span> <span class="badge" >Clustering</span>
+  <span class="badge" >MLR</span> <span class="badge" >PCA</span> <span class="badge" >Clustering</span> <span class="badge" >R</span>
 </div>
 </div>
 
@@ -103,7 +103,7 @@ knitr::opts_chunk$set(echo = FALSE)
   <br><br>
   <p>see <a href="data_in_r/steelhead_salmon_migration_code.html">code</a> behind 
   </p> 
-  <span class="badge">Time Series</span>
+  <span class="badge">Time Series</span> <span class="badge" >R</span>
 
   
 </div>
@@ -114,7 +114,7 @@ knitr::opts_chunk$set(echo = FALSE)
   </a>
   <br><br>
   <p>see <a href="data_in_r/text_mining_on_the_unbearable_code.html">code</a> behind</p>
-  <span class="badge" >Text mining</span>
+  <span class="badge" >Text mining</span> <span class="badge" >R</span>
   
 </div>
 </div>
@@ -134,7 +134,7 @@ knitr::opts_chunk$set(echo = FALSE)
 <br><br>
 <p>see <a href="data_in_r/snowshoe_code.html">code</a> behind 
 </p>
-<span class="badge" >Basic</span>
+<span class="badge" >Basic</span> <span class="badge" >R</span>
 
 </div>
 <div class="column right">
@@ -145,10 +145,37 @@ knitr::opts_chunk$set(echo = FALSE)
 <br><br>
 <p>see <a href="data_in_r/nutrient_code.html">code</a> behind 
 </p>
-<span class="badge" >PCA</span>
+<span class="badge" >PCA</span> <span class="badge" >R</span>
 </div>
 </div>
 
+<br>
+
+<!-- fifth row GIS -->
+
+<div class="row">
+  <div class="column left">
+  <h4>Sea level rise in Santa Barbara, CA</h4>
+  <a href="gis/sb_sea_level_rise.pdf">
+    <img alt="" src="gis/cover_image/sb_sea_level_rise.png" width="390">
+  </a>
+  <br><br>
+  <p>This project was part of the curriculum of <a href="https://frew.eri.ucsb.edu/private/ESM263/">ESM 263</a>
+  </p>
+  <span class="badge" >ArcMap</span> <span class="badge" >GIS</span>
+  </div>
+  <div class="column right">
+  <h4>Watershed Conservation Priorities in Santa Barbara, CA</h4>
+  <a href="gis/sb_watersheds_conservation.png">
+    <img alt="" src="gis/cover_image/sb_watersheds_conservation.png" width="390">
+  </a>
+  <br><br>
+  <p>This project was part of the curriculum of <a href="https://frew.eri.ucsb.edu/private/ESM263/">ESM 263</a>
+  </p>
+  <span class="badge" >ArcMap</span> <span class="badge" >GIS</span> <span class="badge" >Multicriteria Analysis</span>
+
+  </div>
+</div>
 
 
 <br><br><br>
